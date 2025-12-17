@@ -1,0 +1,3 @@
+## terminal :
+command + j
+
