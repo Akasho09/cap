@@ -5,12 +5,35 @@
 ## A friend function 
 in C++ is a function that is not a member of a class, but it is allowed to access the private and protected members of that class.
 - Normally, private data is accessible only inside the class, but a friend function is given special permission.
-
+- Friend can be 
+1. Global Fn.
+2. A Class 
+3. Function of a Class
 ### 📌 Why do we need Friend Functions?
 - To allow external functions to access private data
-- Useful when two or more classes need to share data
-- Helps in operator overloading
+- Useful when two or more classes need to share data :
+```c
+class B;
+
+class A {
+    int x;
+    friend class B;
+};
+
+class B {
+public:
+    void show(A obj) {
+        cout << obj.x;   // allowed
+    }
+};
+```
+- Helps in operator overloading :   
+    - BECAUSE : For input/output operations, the **left operand is typically an istream** (for >>) or ostream (for <<) object, such as std::cin or std::cout.
+    And in Method Overloading LHS is Object by default.
+
 - Keeps class design clean while allowing controlled access.
+> Friendship can NOT be Inherited .
+
 ```c
 #include <iostream>
 using namespace std;

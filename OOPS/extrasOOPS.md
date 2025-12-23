@@ -322,3 +322,9 @@ public:
 };
 ```
 ✔ Used in Singleton pattern
+
+## An enum (short for enumeration) 
+- is a user-defined data type used to define a set of named constant values.
+- 👉 It makes code more readable, meaningful, and safer than using plain integers.
+> An enum is a user-defined data type that consists of a fixed set of named integral constants.
+
