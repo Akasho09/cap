@@ -2,6 +2,125 @@
 - OOP is a way of designing and writing programs using objects.
 - An object is like a real world thing that has properties (called attributes) and can do things (called methods). These objects are created from classes, which are like blueprints or templates.
 
+## A friend function 
+in C++ is a function that is not a member of a class, but it is allowed to access the private and protected members of that class.
+- Normally, private data is accessible only inside the class, but a friend function is given special permission.
+
+### 📌 Why do we need Friend Functions?
+- To allow external functions to access private data
+- Useful when two or more classes need to share data
+- Helps in operator overloading
+- Keeps class design clean while allowing controlled access.
+```c
+#include <iostream>
+using namespace std;
+
+class Box {
+private:
+    int length;
+
+public:
+    Box() {
+        length = 10;
+    }
+    // Friend function declaration
+    friend void showLength(Box b);
+};
+
+// Friend function definition
+void showLength(Box b) {
+    cout << "Length: " << b.length << endl;
+}
+
+int main() {
+    Box b;
+    showLength(b);
+    return 0;
+}
+```
+
+## 🧠 1. Shallow Copy
+- A shallow copy copies the memory addresses, not the actual data.
+- 👉 Both objects point to the same memory location.
+### ❌ Problem
+- If one object modifies or deletes the memory:
+- The other object is affected
+- Can cause dangling pointers or double free errors
+```cpp
+#include <iostream>
+using namespace std;
+
+class Test {
+public:
+    int* ptr;
+
+    Test(int val) {
+        ptr = new int(val);
+    }
+};
+
+int main() {
+    Test t1(10);
+    Test t2 = t1;   // Shallow copy
+
+    *t2.ptr = 20;
+
+    cout << *t1.ptr << endl; // 20 (unexpected!)
+}
+```
+> 📌 Issue: t1.ptr and t2.ptr point to the same memory.
+
+## 🧠 2. Deep Copy
+- A deep copy copies the actual data, not just the address.
+- 👉 Each object gets its own separate memory.
+
+### ⚙️ How it works
+- You must define your own copy constructor
+- Allocate new memory and copy values
+
+### ✅ Advantage
+- Objects are independent
+- No memory corruption
+- Safe destruction
+```cpp
+#include <iostream>
+using namespace std;
+
+class Test {
+public:
+    int* ptr;
+
+    Test(int val) {
+        ptr = new int(val);
+    }
+
+    // Deep copy constructor
+    Test(const Test& t) {
+        ptr = new int(*t.ptr);
+    }
+
+    ~Test() {
+        delete ptr;
+    }
+};
+
+int main() {
+    Test t1(10);
+    Test t2 = t1;   // Deep copy
+
+    *t2.ptr = 20;
+
+    cout << *t1.ptr << endl; // 10 (correct)
+}
+```
+
+##    // Destructors
+~box()
+{
+        delete breadth;
+}
+
+
 ## The main ideas in OOP are:
 1. ***Encapsulation***: 
 - Encapsulation is the OOP principle of wrapping data (variables) and methods (functions) together into a single unit (class) and restricting direct access to the data.
@@ -36,7 +155,7 @@
 - Improves code readability
 - Allows focusing on high-level logic
 - Makes systems easy to modify and scale
-- 🔹 6️⃣ Enables Polymorphism
+- Enables Polymorphism
     - Base class pointer can point to different objects
     - Behavior decided at runtime.
 
@@ -90,13 +209,13 @@ int main() {
 
     2. Abstraction using Abstract keyword
     > Note: C++ does not have any abstract keyword like Java or C#.  Instead, abstraction is implemented using pure virtual functions in base classes.
-
+    
     | Abstraction                     | Encapsulation                    |
     | ------------------------------- | -------------------------------- |
     | Hides implementation            | Hides data                       |
     | Focuses on **what**             | Focuses on **how**               |
     | Achieved using abstract classes | Achieved using access specifiers |
-    | 'Design-level concept'          | 'Implementation-level concept'   |
+    | **Design-level concept**        | Implementation-level concept     |
 
 
 3. ***Inheritance***: A way to create new objects based on existing ones. It’s like how a child inherits traits from their parents.
@@ -131,7 +250,7 @@ int main() {
 - Makes code easier to extend and maintain
 
 ### 🔹 Types of Polymorphism in C++
-1. 1️⃣ Compile-Time Polymorphism
+1. 1️⃣ ***Compile-Time Polymorphism***
 (Also called Static Polymorphism)
 - Achieved using:
 1. **Function Overloading** : 
@@ -191,4 +310,141 @@ Operator overloading means giving a new meaning to an operator (like +, -, *, []
 - Allows objects to behave like basic data types.
 - Useful for mathematical objects like Complex numbers and Vectors.
 - Reduces the need for extra function calls.
+```c++
+#include <iostream>
+using namespace std;
 
+class Complex {
+public:
+    int real, imag;
+
+    Complex(int r = 0, int i = 0) {
+        real = r;
+        imag = i;
+    }
+
+    Complex operator + (Complex const &obj) {
+        Complex temp;
+        temp.real = real + obj.real;
+        temp.imag = imag + obj.imag;
+        return temp;
+    }
+};
+
+int main() {
+    Complex c1(2, 3), c2(4, 5);
+    Complex c3 = c1 + c2;
+
+    cout << c3.real << " + " << c3.imag << "i";
+}
+```
+1. 1️⃣ Unary Operator Overloading
+- Unary operators work on a single operand.
+> ++ -- - !
+```cpp
+#include <iostream>
+using namespace std;
+
+class Counter {
+public:
+    int count;
+
+    Counter(int c = 0) {
+        count = c;
+    }
+
+    void operator ++ () {   // Prefix ++
+        ++count;
+    }
+};
+
+int main() {
+    Counter c(5);
+    ++c;
+    cout << c.count;   // 6
+}
+```
+void operator ++ ()      // Prefix
+> void operator ++ (int)   // Postfix
+
+2. 2️⃣ Binary Operator Overloading
+- Binary operators work on two operands.
+> + - * / % == < > =
+```cpp
+class Complex {
+public:
+    int real, imag;
+
+    Complex(int r = 0, int i = 0) {
+        real = r;
+        imag = i;
+    }
+
+    Complex operator + (Complex obj) {
+        Complex temp;
+        temp.real = real + obj.real;
+        temp.imag = imag + obj.imag;
+        return temp;
+    }
+};
+```
+
+3. Overloading Using Friend Function
+- Needed when left operand is not an object
+```cpp
+class Complex {
+    int real;
+public:
+    Complex(int r = 0) {
+        real = r;
+    }
+
+    friend ostream& operator << (ostream& out, Complex& c);
+};
+
+ostream& operator << (ostream& out, Complex& c) {
+    out << c.real;
+    return out;
+}
+```
+4. 6️⃣ Special Operator Overloading
+- 🔹 Assignment Operator =
+```cpp
+ClassName& operator = (const ClassName& obj);
+```
+> Used for deep copy (also can be done using function overloading of constructor).
+
+2. 🔄 ***Runtime Polymorphism in C++***
+- Runtime Polymorphism (also called Dynamic Polymorphism) is the ability of a base class pointer/reference to call a derived class’s overridden function at runtime.
+- In simple words: function call is resolved at runtime, not compile time
+
+### 🔹 How Runtime Polymorphism is Achieved
+- Runtime polymorphism in C++ is achieved using:
+1. Inheritance
+2. Virtual functions
+3. Base class pointer / reference
+```cpp
+#include <iostream>
+using namespace std;
+
+class Shape {
+public:
+    virtual void draw() {   // virtual function
+        cout << "Drawing Shape" << endl;
+    }
+};
+
+class Circle : public Shape {
+public:
+    void draw() {   // overridden function
+        cout << "Drawing Circle" << endl;
+    }
+};
+
+int main() {
+    Shape* s;
+    Circle c;
+    s = &c;
+    s->draw();   // Calls Circle's draw()
+}
+```
