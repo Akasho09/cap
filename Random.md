@@ -10,13 +10,13 @@
 cout << pow(5, 3);
 ```
 
-## 🆚 DDL vs DML (Quick Comparison)
+## DDL vs DML (Quick Comparison)
 | Feature             | DDL                        | DML                        |
 | ------------------- | -------------------------- | -------------------------- |
 | Full Form           | Data Definition Language   | Data Manipulation Language |
 | Purpose             | Defines database structure | Manipulates data           |
 | Affects             | Schema                     | Table records              |
-| Transaction Control | ❌ No rollback              | ✅ Rollback possible        |
+| Transaction Control | ❌ No rollback             | ✅ Rollback possible       |
 | Auto Commit         | Yes                        | No                         |
 | Examples            | CREATE, DROP               | INSERT, UPDATE             |
 
