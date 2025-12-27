@@ -16,6 +16,7 @@
 | Play sound      | Kernel | Device operation   |
 
 ## How ls Command Works (User Mode ↔ Kernel Mode Flow)
+```yml
 User types "ls"
      ↓
 Shell (User Mode)
@@ -33,6 +34,7 @@ Kernel accesses filesystem
 Output shown
      ↓
 Process exits
+```
 
 ## EXAMPLE OF A PROCESS WHICH RUNS IN USER MODE ONLY
 1. A Calculator App (or simple text editor)
