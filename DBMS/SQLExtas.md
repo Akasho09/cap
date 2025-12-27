@@ -19,3 +19,34 @@ ADD CONSTRAINT chk_gender CHECK (gender IN ('M','F','O'));
 
 
 ## Replicate table
+
+## ➡️ SQL commands are NOT case-sensitive, but data and identifiers can be depending on context.
+
+## “In SQL, every subquery in the FROM clause must have an alias.”
+- When you write a subquery inside the FROM clause, SQL treats it like a temporary table.
+- And every table must have a name — even temporary ones.
+- That name is called an alias.
+
+
+## Wildcards in SQL :
+| Symbol        | Name                           | Meaning                                          |
+| ------------- | ------------------------------ | ------------------------------------------------ |
+| `%`           | Percent wildcard               | Matches **any number of characters** (0 or more) |
+| `_`           | Underscore wildcard            | Matches **exactly one character**                |
+| `[ ]`         | Character list *(DB specific)* | Matches any one character inside brackets        |
+| `[^ ]` or `!` | Not in list *(DB specific)*    | Matches any character **not** in list            |
+
+## A clause is a complete part of an SQL statement that performs a specific function.
+
+## A keyword is a reserved word in SQL that has a special meaning and cannot be used as a variable or table name (unless escaped).
+
+| Part               | Type    |
+| ------------------ | ------- |
+| `SELECT`           | Keyword |
+| `FROM`             | Keyword |
+| `WHERE`            | Keyword |
+| `ORDER BY`         | Keyword |
+| `SELECT name, age` | Clause  |
+| `FROM students`    | Clause  |
+| `WHERE age > 18`   | Clause  |
+| `ORDER BY name`    | Clause  |
