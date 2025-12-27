@@ -155,3 +155,37 @@ WHERE condition1 AND condition2 AND condition3 ...;
 SELECT * FROM CUSTOMERS WHERE Country="Mexico" AND (CustomerName LIKE "A%" OR CustomerName LIKE "B%");
 ```
 
+## The NOT Operator
+- The NOT operator is used in combination with other operators to give the opposite result, also called the *negative result*.
+- SYNTAX:
+```sql
+SELECT column1, column2, ...
+FROM table_name
+WHERE NOT condition;
+```
+### Examples:
+1. Select only the customers that are NOT from Spain:
+```sql
+SELECT * FROM Customers
+WHERE NOT Country = 'Spain';
+```
+2. Select only the customers that are NOT from Mexico:
+```sql
+SELECT * FROM CUSTOMERS WHERE COUNTRY NOT IN ("Mexico");
+```
+
+3. Select customers that does not start with the letter 'A':
+```sql
+SELECT * FROM CUSTOMERS WHERE CustomerName NOT LIKE "A%";
+```
+
+4. Select customers with a customerID not between 10 and 60:
+```sql
+SELECT * FROM Customers
+WHERE CustomerID NOT BETWEEN 10 AND 60;
+```
+
+5. Select customers that are not from Paris or London:
+SELECT * FROM Customers
+WHERE City NOT IN ('Paris', 'London');
+
