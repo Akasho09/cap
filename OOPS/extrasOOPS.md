@@ -129,8 +129,8 @@ int main()
 ### 🔹 Key Characteristics
 - Declared using the keyword static
 - Can be called using class name
-- Can access only static data members
-- Does not have access to this pointer
+- Can access only `static` data members
+- Does not have access to `this` pointer.
 ```cpp
 #include <iostream>
 using namespace std;
@@ -150,15 +150,12 @@ int main() {
 class Counter {
 public:
     static int count;
-
     static void increment() {
         count++;
     }
 };
-
 int Counter::count = 0;
 ```
-
 ## 🔹 Can a constructor be private?
 > ✅ Yes, a constructor can be private.
 - But it is used only in special design cases, not for normal object creation.

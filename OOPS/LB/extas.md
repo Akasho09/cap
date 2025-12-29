@@ -26,3 +26,46 @@ ie LARGEST DATA TYPES.
 | ------ | -------------------- | ---------------------------- |
 | `&`    | Address-of operator  | Gets the memory address      |
 | `*`    | Dereference operator | Accesses value at an address |
+
+> Pointer to Pointer (**)
+
+> A reference is an alias for a variable.
+int x = 10;
+int &ref = x;
+- ref is another name for x
+
+## Dynamic Memory Allocation :
+> Dynamic Memory Allocation (DMA) means allocating memory at runtime, not at compile time.
+> 👉 Memory is taken from the heap instead of the stack.
+
+### 🧠 Why Do We Need Dynamic Memory?
+- Size is not known at compile time
+- Data size changes during program execution
+- We want memory to exist beyond function scope
+
+| Feature      | Static        | Dynamic         |
+| ------------ | ------------- | --------------- |
+| Allocated at | Compile time  | Runtime         |
+| Memory area  | Stack         | Heap            |
+| Size change  | ❌ Not allowed | ✅ Allowed       |
+| Deallocation | Automatic     | Manual          |
+| Speed        | Faster        | Slightly slower |
+
+### 🔹 Dynamic Memory in C++
+2 ways 
+1. 1️⃣ Using new and delete
+```cpp
+int* arr = new int[5];  // allocate array
+arr[0] = 10;
+arr[1] = 20;
+
+delete[] arr;           // free memory
+``` 
+
+
+2. Using malloc() and free() (C-style)
+```c
+int* p = (int*)malloc(sizeof(int));
+*p = 5;
+free(p);
+``` 
