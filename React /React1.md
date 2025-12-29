@@ -20,6 +20,8 @@
   2. Removes JSX syntax
   3. Outputs browser-understandable JS
 - The browser never sees JSX.
+#### Babel?
+Babel is a JavaScript compiler (transpiler) that converts modern JavaScript (ES6+) and JSX into backward-compatible JavaScript that browsers can understand.
 
 ### How React Works as an SPA
 1. Single HTML File
@@ -142,6 +144,16 @@ const [isOpen, setIsOpen] = useState(false);
 
 4. 4️⃣ Redux / Zustand
 - Used for large-scale apps with complex global state.
+#### Redux : 
+  - Redux is a centralized place to store and manage application data so that every component can access it easily and consistently.
+##### why?
+- In small apps, props + useState + Context are enough.
+- But in large apps:
+  - State is shared across many components
+  - Props become deeply nested (prop drilling)
+  - State becomes hard to track and debug
+
+
 
 5. 5️⃣ Server State Libraries
 - React Query
@@ -229,15 +241,10 @@ Ideally, child components should only re-render if their state or the props pass
 
 
 # Warning: Each child in a list should have a unique “key” prop.
-
-Keys tell React which array item each component corresponds to, so that it can match them up later.
-
-This becomes important if your array items can move (e.g. due to sorting), get inserted, or get deleted.
-
-A well-chosen key helps React infer what exactly has happened, and make the correct updates to the DOM tree.
-
-JSX elements directly inside a map() call always need keys!.
-
+- Keys tell React which array item each component corresponds to, so that it can match them up later.
+- This becomes important if your array items can move (e.g. due to sorting), get inserted, or get deleted.
+- A well-chosen key helps React infer what exactly has happened, and make the correct updates to the DOM tree.
+- JSX elements directly inside a map() call always need keys!.
   
 #  useMemo
 The React "useMemo" Hook returns a memoized value.

@@ -148,3 +148,21 @@ useEffect(() => {
   - Removing event listeners
   - Clearing intervals
   - Cancelling API requests
+
+## 
+- ReactDOM.render() is used to inject a component’s rendered output into a real DOM node like a <div> in index.html.
+- React supports conditional rendering in JSX using ternary (? :) operators or logical &&, allowing UI elements to show/hide dynamically.
+
+
+## Pure Function?
+- A pure function is a function that:
+  - Always returns the same output for the same input
+  - Does not cause any side effects
+> If both conditions are met → the function is pure.
+- EXAMPLE : 
+```JS
+function add(a, b) {
+  return a + b;
+}
+```
+
