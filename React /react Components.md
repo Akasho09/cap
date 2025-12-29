@@ -1,4 +1,13 @@
-## 
+## React components
+- A React component is a reusable, self-contained piece of UI that defines how a part of the user interface looks and behaves. 
+> A React component is a JavaScript function or class that returns UI elements (JSX) and controls how a part of the webpage appears and works.
+
+### 🔹 Why Components Are Used
+- To break the UI into small reusable parts
+- To make code clean, modular, and maintainable
+- To manage data (state) and user interactions
+
+## Type of Component*
 
 | **Type of Component**            | **Description**                       | **Uses State?** | **Common Use Case**         |
 | -------------------------------- | ------------------------------------- | --------------- | --------------------------- |
@@ -51,7 +60,6 @@ class Welcome extends Component {
   - More boilerplate
   - Harder to maintain
   - Mostly seen in older codebases.
-
 
 3. Controlled Components
 - Form data is controlled by React state

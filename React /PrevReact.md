@@ -1,14 +1,50 @@
 ## React
+- "React" is a JavaScript library for building user interfaces.
+- React is used to build single-page applications.
+> A Single Page Application is a web application that loads a single HTML page once, and then dynamically updates the content without reloading the entire page.
+- React is used for building dynamic, interactive, and reusable user interfaces (UIs) for web and mobile apps,  
+ 
+> React current version : 19.
+  - New React Features in 19.2
+    - <Activity />
+    - useEffectEvent
+    - cacheSignal
+    - Performance Tracks
+> 16+ is same hie.
 
-"React" is a JavaScript library for building user interfaces.
+### JSX (JavaScript XML)
+- It is called JSX, and it is a syntax extension to JavaScript. We recommend using it with React to describe what the UI should look like. JSX may remind you of a template language, but it comes with the full power of JavaScript.
+> JavaScript XML (JSX) is a syntax extension for JavaScript that allows you to write HTML-like code inside JavaScript.
+- The build tool (Vite / Webpack / Babel):
+  1. Converts JSX → JavaScript
+  2. Removes JSX syntax
+  3. Outputs browser-understandable JS
+- The browser never sees JSX.
 
-React is used to build single-page applications.
+### How React Works as an SPA
+1. Single HTML File
+- When a React app loads, the browser downloads one main HTML file (usually index.html).
+- This file contains a root <div> where the entire app runs.
 
-React allows us to create reusable UI components.
+2. JavaScript Takes Control
+- React loads JavaScript bundles that handle rendering.
+- All page changes happen inside the browser, not from the server.
 
-- Basically , it calulates diff between initial & final , then updates.
+3. Client-Side Routing
+- React uses libraries like **React Router.**
+- Navigation between pages (e.g., /login, /dashboard) happens without reloading the page.
+- Only components change, not the whole page.
 
-  
+4. Virtual DOM
+- React updates only the parts of the UI that change.
+- This makes the application fast and smooth.
+
+5. API-based Data Fetching
+- React fetches data from APIs (REST or GraphQL).
+- Server sends data, not HTML pages.
+
+> Basically , it calulates diff between initial & final , then updates.
+
 # commands
 npm create vite@latest
 
@@ -21,10 +57,8 @@ npm run dev
 npm run build
 
 # state 
-"State" is an object that holds data that can change over the lifetime of a component.
-
-React tracks this data internally, and when the state changes, it triggers a re-render of the component.
-
+- "State" is an object that holds data that can change over the lifetime of a component.
+- React tracks this data internally, and when the state changes, it triggers a re-render of the component.
 - The state is local to the component and can only be updated by that component (although state can be passed down as props to child components).
 
 setCount (count + 1)
