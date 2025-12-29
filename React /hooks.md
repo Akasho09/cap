@@ -229,7 +229,6 @@ const memoizedFunction = useCallback(() => {
 
 > Automatically memoize values, functions, and components — so you don’t have to manually use useMemo or useCallback.
 ---
-
 | Feature  | useCallback      | useMemo                |
 | -------- | ---------------- | ---------------------- |
 | Returns  | Function         | Value                  |
@@ -245,3 +244,14 @@ const memoizedFunction = useCallback(() => {
 | Used inside      | Components          | Component definitions |
 | Works on         | Callbacks           | Props comparison      |
 | Common use       | Event handlers      | Child components      |
+
+## 
+| Hook          | Purpose                     |
+| ------------- | --------------------------- |
+| `useState`    | Local state                 |
+| `useEffect`   | Side effects                |
+| `useContext`  | Global state                |
+| `useRef`      | DOM access / mutable values |
+| `useMemo`     | Optimize calculations       |
+| `useCallback` | Memoize functions           |
+| `useReducer`  | Complex state logic         |

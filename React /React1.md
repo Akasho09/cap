@@ -98,6 +98,61 @@ function Greeting({name , email}) {
 | Mutability         | Immutable        | Mutable          |
 | Scope              | External         | Internal         |
 
+### 🔹 Types of State in React
+1. 1️⃣ Local (Component) State
+- Managed inside a single component
+- Created using useState
+- Example:
+const [isOpen, setIsOpen] = useState(false);
+- Used for:
+  - Form inputs
+  - Toggles
+  - UI states
+
+2. 2️⃣ Global (Shared) State
+- Used when multiple components need access to the same data.
+- Examples:
+  - Logged-in user
+  - Theme (dark/light)
+  - Cart items
+- Tools used:
+  - Context API
+  - Redux / Zustand / Recoil
+
+3. 3️⃣ Server State
+- Data fetched from an external source (API).
+- Examples:
+  - User data
+  - Product lists
+  - Dashboard data
+- Handled using:
+  - useEffect + fetch
+  - React Query / TanStack Query
+  - SWR
+
+### 🔹 Common State Management Techniques
+1. 1️⃣ useState
+- Best for simple, local component state.
+
+2. 2️⃣ useContext
+- Used to share global data without prop drilling.
+
+3. 3️⃣ useReducer
+- Used for complex state logic with multiple actions.
+
+4. 4️⃣ Redux / Zustand
+- Used for large-scale apps with complex global state.
+
+5. 5️⃣ Server State Libraries
+- React Query
+- SWR
+
+- Handle caching, refetching, and synchronization automatically.
+
+## State Flow in React
+- React follows one-way data flow:
+1. Parent → Child (via props)
+2. Child → Parent (via callbacks)
 
 ## Lifecycle of Components
 Each component in React has a lifecycle which you can monitor and manipulate during its three main phases.
