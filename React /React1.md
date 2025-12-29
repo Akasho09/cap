@@ -45,35 +45,117 @@
 
 > Basically , it calulates diff between initial & final , then updates.
 
+## Props :
+-Props (short for Properties) are read-only inputs passed from a parent component to a child component.
+### ✅ Key Characteristics
+- Passed from parent to child
+- Immutable (cannot be changed by the child)
+- Used to configure or customize components
+- Similar to function arguments
+
+```jsx
+function Greeting(props) {
+  return <h1>Hello, {props.name}!</h1>;
+}
+
+// Parent component
+<Greeting name="Akash" />
+```
+### Props Destructuring
+1. Directly using props.name.
+```js
+function Greeting(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+```
+2. Destructuring inside .
+```js
+function Greeting(props) {
+  const {name , email} = props
+  return <h1>Hello, {name}</h1>;
+}
+```
+3. Destructuring in function para,eter itsslf.
+```js
+function Greeting({name , email}) {
+  return <h1>Hello, {name}</h1>;
+}
+```
+## 🔹 What is State?
+- State is a built-in object that stores data that can change over time inside a component.
+- ✅ Key Characteristics
+  - Managed within the component
+  - Mutable
+  - Triggers re-render when updated
+- Used for dynamic data (counters, form inputs, API responses)
+- 
+| Feature            | Props            | State            |
+| ------------------ | ---------------- | ---------------- |
+| Who owns it?       | Parent component | Component itself |
+| Can be modified?   | ❌ No             | ✅ Yes            |
+| Purpose            | Pass data        | Manage data      |
+| Triggers re-render | ❌ (if unchanged)| ✅                |
+| Mutability         | Immutable        | Mutable          |
+| Scope              | External         | Internal         |
+
+
+## Lifecycle of Components
+Each component in React has a lifecycle which you can monitor and manipulate during its three main phases.
+- The three phases are: Mounting, Updating, and Unmounting.
+
+# Mounting
+Mounting means putting elements into the DOM.
+- This phase happens when a component is created and rendered for the first time.
+- React has four built-in methods that gets called, in this order, when mounting a component:
+### Lifecycle Methods (Class Components):
+1. Mounting Phase (Birth of Component)
+    1. constructor()
+      - Initializes state
+      - Binds methods
+    2. render()
+      - Returns JSX
+      - Must be pure (no side effects)
+    3. componentDidMount()
+      - Called after component is rendered
+      - Best place for:
+        - API calls
+        - Subscriptions
+        - DOM operations
+
+    > The render() method is required and will always be called, the others are optional and will be called if you define them.
+2. 🔹 2. Updating Phase
+3. 🔹 3. Unmounting Phase
+
+### 🔹 React Lifecycle in Functional Components (Hooks)
+- Modern React uses Hooks instead of class lifecycle methods.
+- useEffect() = All lifecycle methods combined
+```js
+useEffect(() => {
+  console.log("Mounted or Updated");
+
+  return () => {
+    console.log("Cleanup / Unmount");
+  };
+}, [dependency]);
+```
+| Hook Pattern                               | Equivalent Lifecycle |
+| ------------------------------------------ | -------------------- |
+| `useEffect(() => {}, [])`                  | componentDidMount    |
+| `useEffect(() => {}, [x])`                 | componentDidUpdate   |
+| `useEffect(() => { return () => {} }, [])` | componentWillUnmount |
+
+
 # commands
 npm create vite@latest
-
 npm install --> installs all dependencies in p.json
-
 cd frontend
-
 npm run dev
-
 npm run build
 
-# state 
-- "State" is an object that holds data that can change over the lifetime of a component.
-- React tracks this data internally, and when the state changes, it triggers a re-render of the component.
-- The state is local to the component and can only be updated by that component (although state can be passed down as props to child components).
-
-setCount (count + 1)
-setCount (c => c + 1)
-setCount (function(c) { return c +1 })
-  
-
 # Re-rendering in react
-
-It happens when
-
-A state variable that is being used inside a component changes
-
-A parent component re-render triggers all children re-rendering.
-
+- It happens when
+- A state variable that is being used inside a component changes
+- A parent component re-render triggers all children re-rendering.
   
   
 
@@ -108,7 +190,7 @@ The React "useMemo" Hook returns a memoized value.
 - useMemo() is a React Hook used to memoize the result of `expensive computations` within functional components.
 
 > It memorizes the value returned by a provided `function` and re-calculates it only when the dependencies change.
-```javascript
+```js
 import { useState, useMemo } from "react";
 
 function App() {
@@ -304,24 +386,6 @@ useEffect(<function>, <dependency>)
 # React Custom Hooks
 - uses internally another hook eg useState etc
 - Custom Hooks start with "use". Example: useFetch.
-
-
-
-## Lifecycle of Components
-Each component in React has a lifecycle which you can monitor and manipulate during its three main phases.
-
-The three phases are: Mounting, Updating, and Unmounting.
-
-# Mounting
-Mounting means putting elements into the DOM.
-
-React has four built-in methods that gets called, in this order, when mounting a component:
-
-constructor()
-getDerivedStateFromProps()
-render()
-componentDidMount()
-The render() method is required and will always be called, the others are optional and will be called if you define them.
 
 
 

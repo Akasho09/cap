@@ -127,42 +127,6 @@ useEffect(() => {
 ## Virtual DOM : 
 ![alt text](image.png)
 
-## Props :
--Props (short for Properties) are read-only inputs passed from a parent component to a child component.
-### ✅ Key Characteristics
-- Passed from parent to child
-- Immutable (cannot be changed by the child)
-- Used to configure or customize components
-- Similar to function arguments
-
-```jsx
-function Greeting(props) {
-  return <h1>Hello, {props.name}!</h1>;
-}
-
-// Parent component
-<Greeting name="Akash" />
-```
-### Props Destructuring
-1. Directly using props.name.
-```js
-function Greeting(props) {
-  return <h1>Hello, {props.name}</h1>;
-}
-```
-2. Destructuring inside .
-```js
-function Greeting(props) {
-  const {name , email} = props
-  return <h1>Hello, {name}</h1>;
-}
-```
-3. Destructuring in function para,eter itsslf.
-```js
-function Greeting({name , email}) {
-  return <h1>Hello, {name}</h1>;
-}
-```
 
 ## React Lifecycle
 - The React lifecycle describes the stages a component goes through from creation → update → removal.
