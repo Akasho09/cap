@@ -141,3 +141,27 @@ Hit Ratio = Number of cache hits / Total memory accesses
     - assume 2 philospher only .
     - IF A PHILOSPHER1 IS USING FORK1 n needs fork2 also n p2 is using fork2 needs f1 . we have used a policy that philospher will use fork only if both are free. so p1 will free f1 and p2 will free p2 . now p1 will take f2 and p2 will take f1 and LOOPP WILL OCCOUR.
 
+## Little Endian vs Big Endian
+- Endianness?
+     - Endianness defines how multi-byte data (like int, float) is stored in memory.
+     - 👉 It tells us which byte goes first in memory.
+
+- In Little Endian, the least significant byte (LSB) is stored at the lowest memory address.
+     - example :
+     - 0x12345678
+     | Byte   | Value |
+     | ------ | ----- |
+     | Byte 0 | 78    |
+     | Byte 1 | 56    |
+     | Byte 2 | 34    |
+     | Byte 3 | 12    |
+
+
+- In Big Endian, the most significant byte (MSB) is stored at the lowest memory address.
+- 
+          | Address | Data |
+          | ------- | ---- |
+          | 1000    | 12   |
+          | 1001    | 34   |
+          | 1002    | 56   |
+          | 1003    | 78   |
