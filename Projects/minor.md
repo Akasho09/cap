@@ -1,3 +1,5 @@
+[text](../../sem7/MinorProject/script2.md)
+
 ## 1️⃣ Bias (Error due to wrong assumptions)
 - Bias is the error caused by a model being too simple and making strong assumptions about the data.
 - Using a straight line to fit data that is actually curved.
@@ -43,4 +45,5 @@ Bias → error from simplicity → underfitting
 Variance → error from complexity → overfitting
 Activation functions → add non-linearity so neural networks can learn complex patterns
 ```
+
 
