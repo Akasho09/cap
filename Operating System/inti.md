@@ -13,6 +13,31 @@
 - PCB(PID , Memory info) and TCB(PC, registers , Stack , Thread state)
 - in c++ , Creation  fork()   , std::thread
 
+### Process Context Switching Heavier than Thread Context Switching?
+- 🔸 2️⃣ Context Information Size
+| Component        | Process | Thread |
+| ---------------- | ------- | ------ |
+| Program Counter  | ✅       | ✅      |
+| CPU Registers    | ✅       | ✅      |
+| Stack Pointer    | ✅       | ✅      |
+| Address Space    | ✅       | ❌      |
+| Page Tables      | ✅       | ❌      |
+| File Descriptors | ✅       | ❌      |
+| TLB Flush        | ✅       | ❌      |
+
+- 🔸 3️⃣ Involves Kernel Mode Switch
+    - Process switch often requires switching kernel data structures
+    - Thread switch (same process) may stay in user mode
+
+- 4️⃣ Cache & TLB Flush Overhead
+    - Process switch invalidates:
+        - TLB (Translation Lookaside Buffer)
+        - CPU caches
+    - Thread switch mostly preserves cache locality
+
+- 🔹 Simple Analogy
+    - Process switch → Changing houses (move furniture, electricity, setup)
+    - Thread switch → Changing rooms in the same house
 
 ## 🔹 1. Deadlock Prevention
 ➡ Prevent at least one of the four deadlock conditions so deadlock can never occur.
@@ -57,3 +82,10 @@ Cost of detection > cost of ignoring
 Common in UNIX/Linux systems
 
 👉 This is not prevention or avoidance, it’s “do nothing and hope it never happens.”
+
+
+## “What is a race condition, and how can it be prevented?”
+- A race condition occurs when two or more processes or threads access shared data at the same time, and the final result depends on the order of execution.
+> ➡️ Since execution order is unpredictable, the output becomes incorrect or inconsistent.
+
+
