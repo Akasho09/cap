@@ -22,7 +22,7 @@
 - My first major project was a College-Based Database Management System.It Was a group Project of DBMS Curriculm subject in our 2nd year. Its is based on Non Relational DataBase MongodB and MERN Stack. 
 >  This project demonstrates my understanding core concepts of database design, CRUD operations, and backend logic. 
 
-2. MediumPro
+2. MediumPro : [text](../../copper/MediumPro)
 - I also built MediumPro – Clone of Medium Blogging App.
 - Its written using React for Frontend and Hono + Prisma backend.
 > Hono: A lightweight and feature-rich framework ideal for building web applications on Cloudflare Workers.
@@ -31,6 +31,9 @@
 - TypeScript: The application is written entirely in TypeScript for type safety and to reduce runtime errors.
 > This Project demonstrates my type-safe coding using TypeScript.
 
+### Imps :
+- One thing that i remeber rn about it is i tried hardcoe the text editor and not use any text editr library. 
+
 3. Apple Scab Estimation Using CNN and Grad-CAM .
 - In our 7th sem we had to make a Minor Project based on Computer vision or Data Mining.
 - It was a Group Project we made a Apple Scab Estimation Using CNN and Grad-CAM .
@@ -38,4 +41,39 @@
 - we Implemented a CNN model achieving 90% accuracy in detecting apple scab disease from leaf images.
 - Used Grad-CAM visualization, data augmentation, and hyperparameter tuning for improved generalization.
 
+### POINTS 
+- A Convolutional Neural Network (CNN) is a type of deep learning model specially designed to process images and visual data.
+- Grad-CAM is a visual explanation technique used to understand what part of the image a CNN is focusing on when making a prediction.
+- Streamlit is an open-source Python framework used to build interactive web applications for data science, machine learning, and AI projects — without needing frontend skills like HTML, CSS, or JavaScript.
+
+### My part :
+- More of Research  
+- Plant Disease Detection and Localization using GRADCAM
+> Ninad Shukla, Sushila Palwe, Shubham, Mohit Rajani, Aaryan Suri
+- Plant Leaf Collection from Kaggle .
+    - Specific leafs collection of Apple of 5k.
+
+
 4. DriftPro – Paytm for Desktop
+
+
+### ✅ How to Describe Projects in an Interview (Golden Formula)
+1. 1️⃣ One-line overview
+What problem you solved and for whom.
+
+2. 2️⃣ Tech stack
+Mention key technologies confidently.
+
+3. 3️⃣ Your role & responsibilities
+What you actually did.
+
+## Hono :
+Hono is a modern backend framework similar to Express.js, but faster, smaller, and optimized for edge computing.
+
+### 🔹 Key Features of  : 
+✅ Extremely fast – built for edge environments
+✅ Tiny bundle size (~12KB)
+✅ TypeScript-first
+✅ Works everywhere – Node.js, Bun, Deno, Cloudflare Workers
+✅ Middleware support (like Express)
+✅ Built-in routing & request handling
