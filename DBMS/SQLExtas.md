@@ -50,3 +50,16 @@ ADD CONSTRAINT chk_gender CHECK (gender IN ('M','F','O'));
 | `FROM students`    | Clause  |
 | `WHERE age > 18`   | Clause  |
 | `ORDER BY name`    | Clause  |
+
+
+
+## 🔹 Optional: Link with Orders Table (Foreign Key)
+- If you want to relate Orders → Shippers, you can do:
+
+ALTER TABLE Orders
+ADD ShipperID INT,
+ADD CONSTRAINT fk_shipper
+FOREIGN KEY (ShipperID) REFERENCES Shippers(ShipperID);
+
+> , after INT .
+

@@ -84,3 +84,133 @@ WHERE c.CustomerName='Around the Horn' AND c.CustomerID=o.CustomerID;
     - A JOIN clause is used to combine rows from two or more tables, based on a related column between them.
     - Let's look at a selection from the "Orders" table:
 
+| JOIN Type  | When to Use               | Example                            |
+| ---------- | ------------------------- | ---------------------------------- |
+| INNER JOIN | Only matching records     | Customers with orders              |
+| LEFT JOIN  | Keep all from left table  | All customers, even without orders |
+| RIGHT JOIN | Keep all from right table | All orders, even without customers |
+| CROSS JOIN | All combinations          | Sizes × Colors                     |
+
+
+## MySQL INNER JOIN Keyword
+
+1. 
+```sql
+SELECT o.OrderID , o.CustomerID , o.OrderDate , c.CustomerName , c.ContactName FROM orders AS o INNER JOIN Customers as c ON c.CustomerID=o.CustomerID;
+```
+
+2. JOIN Three Tables
+- The following SQL statement selects all orders with customer and shipper information:
+```sql
+SELECT o.OrderID , o.CustomerID , c.CustomerName , c.ContactName , c.Country , s.ShipperName , s.Phone FROM 
+( 
+(ORDERS AS o INNER JOIN customers AS c ON o.CustomerID=c.CustomerID) 
+INNER JOIN Shippers AS s ON s.ShipperID=o.ShipperID
+) ;
+```
+
+## MySQL LEFT JOIN Keyword
+```sql
+SELECT c.CustomerName , c.ContactName , o.OrderID , o.CustomerID , o.OrderDate FROM Customers AS c LEFT JOIN Orders as o ON c.CustomerID=o.CustomerID;
+```
+> ALL customers with or without orders
+
+## CROSS JOIN :
+1. SELECT Customers.CustomerName, Orders.OrderID
+    -> FROM Customers
+    -> CROSS JOIN Orders;
+> ALL C*O;
+
+2. SELECT Customers.CustomerName, Orders.OrderID
+    -> FROM Customers
+    -> CROSS JOIN Orders
+    -> WHERE Customers.CustomerID=Orders.CustomerID;
+> INNER JOIN.
+> If you add a WHERE clause (if table1 and table2 has a relationship), the CROSS JOIN will produce the same result as the INNER JOIN clause:
+
+
+## MySQL Self Join
+- A self join is a regular join, but the table is joined with itself.
+```sql
+ SELECT A.CustomerName , B.CustomerName , A.Country FROM customers A , customers B WHERE A.CustomerID<>B.CustomerID AND A.Country=B.Country;
+```
+
+## MySQL UNION Operator
+- The UNION operator is used to combine the result-set of two or more SELECT statements.
+- The UNION operator automatically removes duplicate rows from the result set.
+
+### EXAMPLES:
+1. ALL THE NAMES OF SHIPPERS AND customers ; 
+```sql
+SELECT ShipperName FROM Shippers UNION SELECT ContactName FROM customers;
+```
+
+2. The following SQL statement returns the German cities (only distinct values) from both the "Customers" and the "Suppliers" table:
+```sql
+SELECT City, Country FROM Customers
+WHERE Country='Germany'
+UNION
+SELECT City, Country FROM Suppliers
+WHERE Country='Germany'
+ORDER BY City;
+```
+
+3. 
+```sql
+SELECT 'Customer' AS Type, ContactName AS People , Country AS "Country OR Phone"
+FROM Customers
+UNION
+SELECT 'Shippers', ShipperName, Phone
+FROM Shippers;
+
++----------+------------------+------------------+
+| Type     | People           | Country OR Phone |
++----------+------------------+------------------+
+| Customer | Maria Anders     | Germany          |
+| Customer | Ana Trujillo     | Mexico           |
+| Customer | Antonio Moreno   | Mexico           |
+| Customer | Sample Contact   | USA              |
+| Shippers | Speedy Express   | 123-456-7890     |
+| Shippers | United Package   | 987-654-3210     |
+| Shippers | Federal Shipping | 555-789-4561     |
++----------+------------------+------------------+
+
+```
+
+
+## The MySQL UNION ALL Operator
+- The UNION ALL operator is used to combine the result-set of two or more SELECT statements.
+- The UNION ALL operator includes all rows from each statement, including any **duplicates**.
+- Requirements for UNION ALL: 
+    - Every SELECT statement within UNION must have the same number of columns
+    - The columns must also have similar data types
+    - The columns in every SELECT statement must also be in the same order
+
+
+## MySQL GROUP BY Statement
+
+
+### EXAMPLE
+1. The following SQL statement lists the number of customers in each country:
+```sql
+SELECT COUNTRY , COUNT(CustomerID)  FROM CUSTOMERS GROUP BY COUNTRY;
+```
+
+2. from desending numbera;
+ORDER BY COUNT(CustomerID) DESC;
+
+3. The following SQL statement lists the number of orders sent by each shipper:
+```sql
+SELECT C.ContactName , COUNT(O.OrderID) AS NumberOfOrders FROM CUSTOMERS AS C LEFT JOIN ORDERS AS O  ON O.CustomerID=C.CustomerID  GROUP BY C.CustomerID;
+```
+
+## The MySQL HAVING Clause
+- The HAVING clause was added to SQL because the WHERE keyword cannot be used with aggregate functions.
+
+
+### EXAMPES:
+1. The following SQL statement lists the number of customers in each country. Only include countries with more than 5 customers:
+```sql
+SELECT COUNTRY , COUNT(COUNTRY)  FROM CUSTOMERS GROUP BY COUNTRY HAVING COUNT(COUNTRY)>1;
+```
+
