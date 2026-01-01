@@ -38,6 +38,7 @@
     - Email (SMTP, POP3)
     - File transfer (FTP)
     - Remote login (SSH)
+
 #### Features of TCP : 
 | Feature                 | Description                                 |
 | ----------------------- | ------------------------------------------- |
@@ -50,6 +51,7 @@
 | **Full-duplex**         | Data flows both directions                  |
 
 ### TCP Header :
+![alt text](image-1.png)
 | Field                 | Purpose                |
 | --------------------- | ---------------------- |
 | Source Port           | Sender application     |
@@ -63,15 +65,36 @@
 
 ### 5️⃣ TCP Connection Establishment (3-Way Handshake)
 - TCP uses a 3-step handshake to establish a connection.
-- 🔹 Steps:
-1. SYN → Client requests connection
-2. SYN + ACK → Server acknowledges
-3. ACK → Client confirms
-> 📌 After this → Connection Established
+- 🧩 Step-by-Step Explanation
+1. 🔹 Step 1: SYN (Synchronize)
+- Client sends a SYN packet to server
+- Contains an initial sequence number (ISN)
+- Means: "I want to start a connection"
+- 📤 Client → Server : SYN
+
+2. 🔹 Step 2: SYN + ACK
+- Server receives SYN
+- Sends back:
+    - SYN → its own sequence number
+    - ACK → acknowledgment of client’s SYN
+- 📥 Server → Client : SYN + ACK
+
+3. 🔹 Step 3: ACK
+- Client sends final ACK
+- Acknowledges server’s sequence number
+- 📤 Client → Server : ACK
+
+> ✔️ Connection Established
 ```yml
-Client → SYN → Server
-Client ← SYN+ACK ← Server
-Client → ACK → Server
+Client                                   Server
+  |                                         |
+  | ----------- SYN (Seq = x) ------------> |
+  |                                         |
+  | <------- SYN + ACK (Seq = y, Ack = x+1) |
+  |                                         |
+  | ----------- ACK (Ack = y+1) ----------> |
+  |                                         |
+      ✅ Connection Established
 ```
 
 ### 6️⃣ Data Transfer in TCP
@@ -80,6 +103,7 @@ Client → ACK → Server
 - Receiver sends ACKs
 - Lost packets are retransmitted
 > ✔ Guarantees no loss, no duplication, correct order
+![alt text](image-2.png)
 
 ### 7️⃣ TCP Flow Control (Sliding Window)
 - Uses window size
@@ -124,6 +148,25 @@ Client → ACK
 - ❌ Higher overhead
 - ❌ Not suitable for real-time streaming
 
+## UDP PACKET :
+![alt text](image.png)
+- DATA SIZE = 2^16 - 8BYTES.
+
+## Socket
+> A socket is a combination of IP address + Port number.
+- A socket is the combination of IP address + port number used to identify a specific communication endpoint.
+
+### TCP Socket Communication
+```yml
+Client                    Server
+  |---- connect() ------->|
+  |<--- accept() ---------|
+  |---- send() ---------->|
+  |<--- recv() -----------|
+  |---- close() --------->|
+```
+
+
 
 ## HTTP (HyperText Transfer Protocol) 
 - is a protocol used to transfer data between a client (browser) and a server.
@@ -151,7 +194,7 @@ Client → ACK
 
 ### 🔒 How HTTPS Works (Simple)
 1. Browser requests a secure connection
-2. Server sends SSL certificate
+2. Server sends SSL(Secure soxket Layer)/TLS(Transport Layer Security) certificate
 3. Browser verifies certificate
 4. Secure encrypted channel is created
 5. Data is safely transferred

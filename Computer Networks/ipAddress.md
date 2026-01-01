@@ -3,13 +3,17 @@
 - It helps in identifying and locating devices so data can be sent and received correctly.
 > An IP address is the digital address of a device on a network.
 
+### 📌 It helps in:
+- Identifying a device
+- Locating a device on a network
+- Sending and receiving data
+
 ### 🔹 Why IP Address is Needed?
 - Without an IP address:
     - Devices cannot identify each other
     - Data cannot reach the correct destination
     - Internet communication becomes impossible
     - Just like a home address helps deliver letters, an IP address helps deliver data packets.
-
 
 ### 🔹 So, Is Your IP Same Every Time?
 | Connection Type          | IP Behavior               |
@@ -62,6 +66,82 @@
         - Attackers flood a server with spoofed IP packets
         - Hard to trace real attacker
     
+##  🔹 Structure of an IP Address
+1. IPv4 Format
+- 192.168.1.1
+- 32-bit address
+- Divided into 4 octets
+- Each octet = 8 bits (0–255)
+- Binary example:
+```yml
+192 → 11000000
+168 → 10101000
+1   → 00000001
+1   → 00000001
+```
+
+## 🔹 Types of IP Addresses
+1. 1️⃣ IPv4 (32-bit)
+- Format: x.x.x.x
+- Total addresses: ~4.3 billion
+- Example: 192.168.0.1
+
+2. 2️⃣ IPv6 (128-bit)
+- Created due to IPv4 exhaustion
+- Format:
+> 2001:0db8:85a3:0000:0000:8a2e:0370:7334
+> Supports ~340 undecillion addresses
+- Each block:
+    - 16 bits (4 hex digits)
+    - Total = 8 blocks = 128 bits
+
+## 🔹 Classes of IP Addresses (IPv4)
+
+| Class | Range                       | Default Mask  | Use             |
+| ----- | --------------------------- | ------------- | --------------- |
+| A     | 1.0.0.0 – 126.255.255.255   | 255.0.0.0     | Large networks  |
+| B     | 128.0.0.0 – 191.255.255.255 | 255.255.0.0   | Medium networks |
+| C     | 192.0.0.0 – 223.255.255.255 | 255.255.255.0 | Small networks  |
+| D     | 224.0.0.0 – 239.255.255.255 | Multicast     |                 |
+| E     | 240.0.0.0 – 255.255.255.255 | Reserved      |                 |
+
+| **Class**   | **First Octet Range** | **Network Bits** | **Number of Networks** | **Hosts per Network** |
+| ----------- | --------------------- | ---------------- | ---------------------- | --------------------- |
+| **Class A** | 1 – 126               | 7 bits           | **126 networks**       | 16,777,214            |
+| **Class B** | 128 – 191             | 14 bits          | **16,384 networks**    | 65,534                |
+| **Class C** | 192 – 223             | 21 bits          | **2,097,152 networks** | 254                   |
+| **Class D** | 224 – 239             | —                | Multicast              | —                     |
+| **Class E** | 240 – 255             | —                | Experimental           | —                     |
+
+1. A:
+> 1.0.0.0 – 126.255.255.255
+- First bit: 0
+- 8 bits for network => 2^7(0 fixed ) => 126 networks(cz 0 resrved and 127 broadcasting )
+- 24 bits for hosts => 2^24 ~16 million hosts per network
+- 🔸 Usage:
+    - Large organizations
+    - ISPs
+- 
+    - 0.0.0.0 (reserved)
+    - 127.0.0.0 (loopback)
+
+
+2. 🔹 Class B
+- First two bits: 10
+- 16 bits for network
+- 16 bits for hosts
+- Supports 65,534 hosts per network
+
+
+
+## Special IP Adrresses : 
+| Address         | Purpose              |
+| --------------- | -------------------- |
+| 127.0.0.1       | Loopback (localhost) |
+| 0.0.0.0         | Default route        |
+| 255.255.255.255 | Broadcast            |
+
+
 ## 🔹 What is NAT?
 - NAT (Network Address Translation) is a networking technique used to translate private (internal) IP addresses into public IP addresses and vice versa.
 - 👉 It allows multiple devices in a private network to share a single public IP address to access the internet.
@@ -108,8 +188,6 @@
 ❌ Causes issues with some protocols (VoIP, FTP)
 ❌ Adds processing overhead
 ❌ Complicates peer-to-peer communication
-
-
 
 ## PORT 
 A port is a logical communication endpoint used by computers to identify specific services or applications running on a device.
@@ -166,18 +244,4 @@ A port is a logical communication endpoint used by computers to identify specifi
 | Reliability | Guaranteed          | Not guaranteed    |
 | Speed       | Slower              | Faster            |
 | Use Case    | Web, Email          | Streaming, Gaming |
-
-## Socket
-> A socket is a combination of IP address + Port number.
-- A socket is the combination of IP address + port number used to identify a specific communication endpoint.
-
-### TCP Socket Communication
-```yml
-Client                    Server
-  |---- connect() ------->|
-  |<--- accept() ---------|
-  |---- send() ---------->|
-  |<--- recv() -----------|
-  |---- close() --------->|
-```
 
