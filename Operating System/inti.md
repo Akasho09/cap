@@ -88,4 +88,96 @@ Common in UNIX/Linux systems
 - A race condition occurs when two or more processes or threads access shared data at the same time, and the final result depends on the order of execution.
 > ➡️ Since execution order is unpredictable, the output becomes incorrect or inconsistent.
 
+## IPC :
+- Inter-Process Communication (IPC) is a mechanism that allows different processes to communicate and share data with each other while executing concurrently.
+### 🔹 Types of IPC Mechanisms
+1. 1️⃣ Shared Memory
+- Fastest IPC method
+    - Multiple processes share a common memory region
+    - 🔹 Needs synchronization tools (mutex/semaphore)
+- 🔹 Used in high-performance applications
+- ✔ Fast
+- ❌ Risk of race conditions
+
+2. 2️⃣ Pipes
+    1. a) Unnamed Pipes
+        - Used between parent and child processes
+        - One-way communication
+
+    2. b) Named Pipes (FIFOs)
+        - Used between unrelated processes
+        - Exist as files in the filesystem
+
+3. 3️⃣ Message Queues
+- Processes exchange messages instead of raw data
+- OS maintains message queues
+    - ✔ Structured communication
+    - ✔ Safer than shared memory 
+- ❌ Slower
+
+
+4. 6️⃣ Signals
+- Used to notify a process about events
+- Simple and asynchronous
+- Examples:
+    - SIGKILL, SIGINT, SIGTERM
+
+| IPC Mechanism | Speed   | Communication Type | Use Case              |
+| ------------- | ------- | ------------------ | --------------------- |
+| Shared Memory | Fastest | Data sharing       | High performance apps |
+| Pipes         | Medium  | One-way            | Parent-child          |
+| Message Queue | Medium  | Message based      | Process messaging     |
+| Semaphores    | Fast    | Synchronization    | Resource control      |
+| Sockets       | Slower  | Network            | Client-server         |
+| Signals       | Fast    | Event notification | Control signals       |
+
+
+## 🔹 What is Contention?
+- Contention occurs when two or more processes or threads compete for the same limited resource (CPU, memory, lock, I/O device, etc.) at the same time.
+- ➡️ Because the resource cannot be used simultaneously, some processes must wait, leading to delay or performance degradation.
+> Contention is the competition between processes for shared resources.
+
+### 🔹 Common Types of Contention
+1. 1️⃣ CPU Contention
+- Multiple processes want CPU time.
+- Handled by the CPU scheduler.
+🧠 Example:
+> Many running programs competing for CPU cores.
+
+2. 2️⃣ Memory Contention
+- Multiple processes try to access or allocate memory simultaneously.
+
+🧠 Example:
+- Multiple apps requesting RAM → paging or thrashing.
+
+3. 3️⃣ Lock Contention
+- Multiple threads try to acquire the same lock/mutex.
+
+
+## Compaction 
+- is a memory management technique used to reduce or eliminate external fragmentation by moving processes in memory so that all free memory becomes one large contiguous block.
+
+## 🔹 Internal Fragmentation
+- Internal fragmentation occurs when allocated memory is larger than the requested memory, and the extra unused space inside the allocated block is wasted.
+
+## External fragmentation 
+- occurs when free memory is split into small scattered blocks, making it impossible to allocate a large contiguous block even though total free memory is sufficient.
+
+| Feature         | Internal Fragmentation    | External Fragmentation   |
+| --------------- | ------------------------- | ------------------------ |
+| Where it occurs | Inside allocated memory   | Between allocated blocks |
+| Cause           | Fixed-size allocation     | Variable-size allocation |
+| Wasted memory   | Inside allocated block    | Outside allocated blocks |
+| Avoided by      | Using smaller blocks      | Compaction / paging      |
+| Example         | 8 KB allocated, 6 KB used | Many small free holes    |
+
+## Paging Drawbacks :
+| Drawback               | Explanation                         |
+| ---------------------- | ----------------------------------- |
+| Internal fragmentation | Wasted memory inside pages          |
+| Memory overhead        | Page tables consume space           |
+| Slower access          | Two memory accesses per instruction |
+| Hardware dependency    | Requires MMU support                |
+| Page faults            | Can slow system significantly       |
+
 

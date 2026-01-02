@@ -143,7 +143,7 @@ Hit Ratio = Number of cache hits / Total memory accesses
 
 ## Little Endian vs Big Endian
 - Endianness?
-     - Endianness defines how multi-byte data (like int, float) is stored in memory.
+     - Endianness defines how **multi-byte data** (like int, float) is stored in memory.
      - 👉 It tells us which byte goes first in memory.
 
 - In Little Endian, the least significant byte (LSB) is stored at the lowest memory address.
@@ -165,3 +165,23 @@ Hit Ratio = Number of cache hits / Total memory accesses
           | 1001    | 34   |
           | 1002    | 56   |
           | 1003    | 78   |
+
+
+## Schedulers
+
+| Scheduler   | Function                   |*Frequency*| Controls                   |
+| ----------- | -------------------------- | --------- | -------------------------- |
+| Long-Term   | Admits jobs                | Low       | Degree of multiprogramming |
+| Short-Term  | Chooses next process       | Very High | CPU time                   |
+| Medium-Term | Suspends/resumes processes | Medium    | Memory usage               |
+
+
+## Queues
+
+| Queue Name      | Contains               | Managed By            |
+| --------------- | ---------------------- | --------------------- |
+| Job Queue       | All new processes      | Long-term scheduler   |
+| Ready Queue     | Ready-to-run processes | Short-term scheduler  |
+| Waiting Queue   | Waiting for I/O        | OS                    |
+| Device Queue    | Waiting for devices    | Device controller     |
+| Suspended Queue | Swapped-out processes  | Medium-term scheduler |
