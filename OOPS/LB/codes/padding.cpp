@@ -23,9 +23,10 @@ class IntBool {
 };
 
 // Int + Short
-class IntShort {
+class IntShortInt {
     int a;      // 4 bytes
-    short b;    // 2 bytes
+    short b;
+    int c;
 };
 
 // Int + Short + Bool
@@ -109,7 +110,7 @@ int main() {
     cout << "OneChar                 : " << sizeof(OneChar) << endl;
     cout << "OneBool                  : " << sizeof(oneBool) << endl;
     cout << "IntBool                 : " << sizeof(IntBool) << endl;
-    cout << "IntShort                : " << sizeof(IntShort) << endl;
+    cout << "IntShortInt                : " << sizeof(IntShortInt) << endl;
     cout << "IntShortBool            : " << sizeof(IntShortBool) << endl;
     cout << "Int2ShortBool           : " << sizeof(Int2ShortBool) << endl;
     cout << "LongIntShortBool        : " << sizeof(LongIntShortBool) << endl;

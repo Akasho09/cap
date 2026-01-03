@@ -220,6 +220,12 @@ int main() {
     s->draw();   // Drawing Circle
 }
 ```
+- OR 
+```c
+Bird * bird = new parrot();
+bird.fly();
+```
+
 ### 🔍 What’s happening?
 - User uses Shape interface
 - Actual object is Circle
