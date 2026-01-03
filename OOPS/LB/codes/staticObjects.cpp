@@ -45,6 +45,5 @@ int main () {
     }
 
     cout <<"After this \n";
-
-
 }
+
