@@ -284,7 +284,7 @@ int main(){
     ....
     s1 is at 100 times .
 }
-```cpp
+```
 
 
 | Aspect    | Cohesion              | Coupling              |
@@ -295,5 +295,104 @@ int main(){
 | Principle | Single Responsibility | Dependency management |
 
 > 📌 Good design = High cohesion + Low coupling
+
+## Garbage Collector (GC)?
+- A Garbage Collector is an automatic memory management system that reclaims memory occupied by objects no longer in use, preventing memory leaks.
+> A garbage collector automatically frees memory that is no longer reachable or needed by a program.
+
+| Language   | GC                           |
+| ---------- | ---------------------------- |
+| Java       | ✅                            |
+| Python     | ✅                            |
+| C#         | ✅                            |
+| JavaScript | ✅                            |
+| C / C++    | ❌ (manual memory management) |
+
+
+## C and C++
+> C is a procedural language focused on functions, while C++ is a **multi-paradigm** language that supports object-oriented programming and advanced abstractions.
+
+| Feature           | **C**      | **C++**                           |
+| ----------------- | ---------- | --------------------------------- |
+| Programming type  | Procedural | Multi-paradigm (Procedural + OOP) |
+| Focus             | Functions  | Objects + functions               |
+| Classes & Objects | ❌ No       | ✅ Yes                             |
+| Encapsulation     | ❌ No       | ✅ Yes                             |
+| Inheritance       | ❌ No       | ✅ Yes                             |
+| Polymorphism      | ❌ No       | ✅ Yes                             |
+| Abstraction       | ❌ No       | ✅ Yes                             |
+
+- 🔸 4. Memory Management
+| Aspect                   | C                      | C++             |
+| ------------------------ | ---------------------- | --------------- |
+| Allocation               | `malloc()`, `calloc()` | `new`, `delete` |
+| Deallocation             | `free()`               | `delete`        |
+| Constructors/Destructors | ❌                      | ✅               |
+
+
+- 6. Standard Library
+    - C → Small standard library (stdio.h, stdlib.h)
+    - C++ → Rich STL (vector, map, set, algorithm)
+
+- 🔸 8. Namespace Support
+    - C ❌
+    - C++ ✅ (namespace std)
+
+> C is a procedural programming language focused on functions, while C++ is a multi-paradigm language that extends C with object-oriented features like classes, inheritance, and polymorphism, making it more suitable for large-scale software development.
+
+
+### Function overloading
+-  means having multiple functions with the same name but different parameter lists in the same scope.
+- ✅ Key Points
+    - Happens at compile time
+    - Known as compile-time polymorphism
+    - Parameters must differ (number, type, or order)
+    - Return type alone cannot differentiate functions
+
+### Function Overriding
+- Function overriding means redefining a base class function in a derived class with the same function signature.
+- ✅ Key Points
+    - Happens at runtime
+    - Known as runtime polymorphism
+    - Requires inheritance
+    - Function must be declared virtual in base class
+
+| Feature            | Overloading   | Overriding           |
+| ------------------ | ------------- | -------------------- |
+| Polymorphism type  | Compile-time  | Runtime              |
+| Inheritance needed | ❌             | ✅                    |
+| Function signature | Must differ   | Must be same         |
+| Binding            | Early binding | Late binding         |
+| `virtual` keyword  | ❌             | ✅                    |
+| Scope              | Same class    | Base & derived class |
+
+## Pass-by-pointer vs pass-by-reference
+> Pass-by-pointer passes an address and requires dereferencing, while pass-by-reference passes an alias and offers safer, cleaner syntax.
+- Pass-by-pointer
+void update(int* p) {
+    *p = 100;
+}
+
+int main() {
+    int x = 10;
+    update(&x);
+}
+
+- Pass-by-reference
+void update(int& r) {
+    r = 100;
+}
+
+int main() {
+    int x = 10;
+    update(x);
+}
+
+## inline function 
+- is a function for which the compiler tries to replace the function call with the actual function code at compile time, instead of performing a normal function call.
+> 👉 Functions defined inside a class are implicitly inline.
+
+
+
 
 

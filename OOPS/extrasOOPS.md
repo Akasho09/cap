@@ -50,7 +50,6 @@ int main() {
 
 
 ## Diamond Problem
-
 ![alt text](image-1.png)
 ```cpp
 

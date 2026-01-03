@@ -2,6 +2,14 @@
 - OOP is a way of designing and writing programs using objects.
 - An object is like a real world thing that has properties (called attributes) and can do things (called methods). These objects are created from classes, which are like blueprints or templates.
 
+## Class and objects : 
+- A class is a user-defined data type that acts as a blueprint for creating objects.
+- It defines properties (data members) and behaviors (member functions).
+
+### Object?
+- An object is an instance of a class.
+- It represents a real-world entity and occupies memory.
+
 ## A friend function 
 in C++ is a function that is not a member of a class, but it is allowed to access the private and protected members of that class.
 - Normally, private data is accessible only inside the class, but a friend function is given special permission.
@@ -265,6 +273,73 @@ bird.fly();
 | Private     | ❌ Not accessible   | ❌                     | ❌                   |
 > Inheritance is an OOP concept in which a derived class acquires the properties and methods of a base class, enabling code reuse and supporting polymorphism.
 > The default inheritance type of a class in C++ is private, while for a struct it is public.
+
+## 🔹 Types of Inheritance in OOP (C++)
+1. 1️⃣ Single Inheritance
+-  👉 One child class inherits from one parent class.
+class A {
+public:
+    void show() {}
+};
+
+class B : public A {
+};
+
+2. 2️⃣ Multiple Inheritance
+- 👉 One child class inherits from multiple parent classes.
+
+class A {
+public:
+    void funcA() {}
+};
+
+class B {
+public:
+    void funcB() {}
+};
+
+class C : public A, public B {
+};
+
+3. 3️⃣ Multilevel Inheritance
+- 👉 A class inherits from another derived class.
+
+class A {
+};
+
+class B : public A {
+};
+
+class C : public B {
+};
+
+4. 4️⃣ Hierarchical Inheritance
+- 👉 Multiple child classes inherit from one parent class.
+
+class A {
+};
+
+class B : public A {
+};
+
+class C : public A {
+};
+
+5. 5️⃣ Hybrid Inheritance
+- 👉 Combination of two or more types of inheritance.
+
+class A {
+};
+
+class B : public A {
+};
+
+class C {
+};
+
+class D : public B, public C {
+};
+
 
 
 4. Polymorphism: 

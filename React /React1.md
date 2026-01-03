@@ -12,6 +12,11 @@
     - Performance Tracks
 > 16+ is same hie.
 
+- React creates a Virtual DOM (lightweight copy of real DOM)
+  - Compares changes (diffing)
+  - Updates only what changed (reconciliation)
+> ✔ Faster than direct DOM manipulation
+
 ### JSX (JavaScript XML)
 - It is called JSX, and it is a syntax extension to JavaScript. We recommend using it with React to describe what the UI should look like. JSX may remind you of a template language, but it comes with the full power of JavaScript.
 > JavaScript XML (JSX) is a syntax extension for JavaScript that allows you to write HTML-like code inside JavaScript.

@@ -53,7 +53,6 @@
 - Plant Leaf Collection from Kaggle .
     - Specific leafs collection of Apple of 5k.
 
-
 4. DriftPro – Paytm for Desktop
 
 
@@ -77,3 +76,16 @@ Hono is a modern backend framework similar to Express.js, but faster, smaller, a
 ✅ Works everywhere – Node.js, Bun, Deno, Cloudflare Workers
 ✅ Middleware support (like Express)
 ✅ Built-in routing & request handling
+
+## Tell me something that’s not on your resume :
+One thing that’s not explicitly mentioned on my resume is my front-end portfolio project, which I believe is a strong representation of my UI and performance optimization skills.
+
+I focused heavily on web performance and user experience, and as a result, the Largest Contentful Paint (LCP) of the website is 1.27 seconds, which falls under the best performance category. The First Contentful Paint (FCP) is 0.94 seconds, and the Cumulative Layout Shift (CLS) is 0, indicating a stable and responsive layout.
+
+I optimized these metrics through efficient asset loading, layout stability, and clean component design. This project reflects how I approach front-end development—not just visually, but also from a performance and user-centric perspective.
+
+## 
+
+I had a one-year gap after my 12th, which was due to circumstances beyond my control. During my 11th standard, the abrogation of Article 370 in Kashmir led to a prolonged shutdown, including suspension of internet services, transport, and regular schooling. This significantly disrupted academic continuity, and even examinations were conducted with a reduced syllabus.
+
+Shortly after, during my 12th standard, the COVID-19 pandemic further impacted the education system, making preparation inconsistent and highly uncertain.

@@ -27,6 +27,60 @@ JavaScript uses:
 
 > Asynchronous functions allow non-blocking execution by returning promises and handling results later using async/await.
 
+## Synchronous JavaScript (Sync)
+- Synchronous code executes line-by-line.
+- Each operation blocks the next one until it finishes
+
+| Feature     | Synchronous | Asynchronous               |
+| ----------- | ----------- | -------------------------- |
+| Execution   | Blocking    | Non-blocking               |
+| Flow        | Sequential  | Event-based                |
+| Performance | Slower      | Faster                     |
+| UI impact   | Freezes UI  | Responsive UI              |
+| Examples    | Loops, math | setTimeout, fetch, Promise |
+
+## Event Loop in JavaScript :: ?????
+- The event loop is an important concept in JavaScript that enables asynchronous programming by handling tasks efficiently. Since JavaScript is single-threaded, it uses the event loop to manage the execution of multiple tasks without blocking the main thread.
+
+
+## VAR , LET , CONST 
+
+| Keyword | Scope             |
+| ------- | ----------------- |
+| `var`   | Function / Global |
+| `let`   | Block             |
+| `const` | Block             |
+
+| Feature    | var   | let   | const |
+| ---------- | ----- | ----- | ----- |
+| Re-declare | ✅ Yes | ❌ No  | ❌ No  |
+| Re-assign  | ✅ Yes | ✅ Yes | ❌ No  |
+
+
+| Feature       | var           | let | const |
+| ------------- | ------------- | --- | ----- |
+| Hoisted       | ✅             | ✅   | ✅     |
+| Initialized   | ✅ (undefined) | ❌   | ❌     |
+| TDZ           | ❌             | ✅   | ✅     |
+| Block Scope   | ❌             | ✅   | ✅     |
+| Global object | ✅             | ❌   | ❌     |
+
+
+
+
+
+## JS VS TS 
+
+| Aspect          | JavaScript | TypeScript    |
+| --------------- | ---------- | ------------- |
+| Error detection | Runtime    | Compile-time  |
+| Refactoring     | Risky      | Safe          |
+| Team scaling    | Hard       | Easy          |
+| Documentation   | Manual     | Types as docs |
+| Maintenance     | Costly     | Predictable   |
+
+
+
 ## Question 1. What is the difference between a process and a thread?
 - Process is an independent unit of execution with its own memory space, while a thread is a smaller unit within a process that shares the same memory and resources.
 - Processes are isolated from each other and require more overhead to create and manage.
