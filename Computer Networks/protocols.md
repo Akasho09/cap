@@ -173,7 +173,30 @@ Client                    Server
     - It sends data in plain text
     - No security or encryption
     - Anyone in between can read or modify the data
+- Stateless :
+    - Every request is treated as a new request
+    - Server does not store client context
+    - Previous requests do not affect the next request
+### 🔹 How Does HTTP Handle “State” Then?
+- HTTP itself is stateless, but applications add state manually using:
+1. 1️⃣ Cookies
+Set-Cookie: sessionId=abc123
+2. 2️⃣ Sessions (Server-Side)
+- Server stores session data
+- Client sends session ID in cookie
+3. 3️⃣ Tokens (JWT)
+- State stored in token
+- Token sent in headers
+- Authorization: Bearer <token>
+| Feature         | Stateless (HTTP) | Stateful          |
+| --------------- | ---------------- | ----------------- |
+| Server Memory   | ❌ None           | ✅ Maintains state |
+| Scalability     | High             | Lower             |
+| Fault Tolerance | High             | Low               |
+| Example         | HTTP             | FTP session       |
 
+
+Browser sends cookie with every request.
 ## 🔐 What is HTTPS?
 - HTTPS (HyperText Transfer Protocol Secure) is the secure version of HTTP.
 - It uses:
@@ -229,6 +252,7 @@ Client                    Server
     - Authoritative DNS Server
 5. IP address is returned
 6. Browser connects to the website using that IP
+![alt text](image-3.png)
 
 ### 🔹 DNS Caching
 - To improve speed:
