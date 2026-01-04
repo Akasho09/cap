@@ -254,6 +254,15 @@ bird.fly();
     | Achieved using abstract classes | Achieved using access specifiers |
     | **Design-level concept**        | Implementation-level concept     |
 
+### 🔥 Interview Traps
+❓ Can abstract class have implementation?
+✅ Yes
+
+❓ Can abstract class have constructor?
+✅ Yes
+
+❓ Is abstract class same as interface?
+❌ No (in C++)
 
 3. ***Inheritance***: A way to create new objects based on existing ones. It’s like how a child inherits traits from their parents.
 - Inheritance is an OOP concept where a new class (derived/child) acquires the properties and behaviors of an existing class (base/parent).

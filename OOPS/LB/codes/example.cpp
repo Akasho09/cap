@@ -3,9 +3,16 @@ using namespace std;
 
 class Test {
 public:
-    Test() { cout << "Constructor called\n"; }
-    ~Test() { cout << "Destructor called\n"; }
+     Test() { cout << "Constructor called\n"; }
+     virtual ~ Test() { cout << "Destructor called\n"; }
 };
+
+class Derived : public Test {
+public:
+     Derived() { cout << "Derived Constructor called\n"; }
+    ~Derived() { cout << "Derived Destructor called\n"; }
+};
+
 
 // STATIC OBJECT CREATED ONLY ONCE 
 void func() {
@@ -19,6 +26,9 @@ void func2() {
 }
 
 int main() {
-    func();
-    func();
+    // func();
+    // func();
+
+    Test *t1 = new Derived();
+    delete t1;
 }

@@ -47,13 +47,23 @@
 - Streamlit is an open-source Python framework used to build interactive web applications for data science, machine learning, and AI projects — without needing frontend skills like HTML, CSS, or JavaScript.
 
 ### My part :
-- More of Research  
 - Plant Disease Detection and Localization using GRADCAM
-> Ninad Shukla, Sushila Palwe, Shubham, Mohit Rajani, Aaryan Suri
-- Plant Leaf Collection from Kaggle .
+- More of Research :
+    - Reserch papers only on PLANT LEAFS not specifically on Apple Leaf.
+    -  literature review
+- problem-definition aspect and identifying gaps.
+- dataset collection  , Plant Leaf Collection from Kaggle .
     - Specific leafs collection of Apple of 5k.
+- Data Augmentation :
+    - Data augmentation is done by applying controlled transformations like rotation, flipping, and brightness changes to training images to increase dataset diversity without altering labels.
+> Ninad Shukla, Sushila Palwe, Shubham, Mohit Rajani, Aaryan Suri.
+'''
+My role was primarily focused on the research and problem-definition aspect of the project. I worked on reviewing existing literature, identifying gaps—especially around model explainability—and helped define the scope of using Grad-CAM along with CNNs. I also contributed to dataset collection, augmentation strategies, and interpretation of Grad-CAM heatmaps to validate the model’s predictions.
+'''
+### GOLDEN 
+> That was outside my direct implementation, but conceptually…
 
-4. DriftPro – Paytm for Desktop
+4. DriftPro – Paytm for Desktop 
 
 
 ### ✅ How to Describe Projects in an Interview (Golden Formula)

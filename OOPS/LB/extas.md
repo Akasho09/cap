@@ -215,6 +215,17 @@ int** pp;
 | Methods             | Yes         | Yes        |
 | Constructors        | Yes         | Yes        |
 
+| Feature                    | `class`         | `struct`        |
+| -------------------------- | --------------- | --------------- |
+| **Default access**         | `private`       | `public`        |
+| **Default inheritance**    | `private`       | `public`        |
+| Methods                    | ✅ Yes           | ✅ Yes           |
+| Constructors / Destructors | ✅ Yes           | ✅ Yes           |
+| Inheritance                | ✅ Yes           | ✅ Yes           |
+| Polymorphism               | ✅ Yes           | ✅ Yes           |
+| Memory / Performance       | ❌ No difference | ❌ No difference |
+
+
 - 🔹 When to Use struct
     - ✔ For plain data structures
     - ✔ When data members should be public
@@ -224,6 +235,7 @@ int** pp;
     - ✔ When hiding implementation
     - ✔ For business logic
 
+> struct works as class in C++ , supports OOPS. But no aceeses specifiers. BUT does NOT work in C.
 
 ## using namespace std;
 using namespace std; tells the compiler to use the standard library namespace (std) automatically, so you don’t have to prefix standard names with std::.
@@ -393,6 +405,24 @@ int main() {
 > 👉 Functions defined inside a class are implicitly inline.
 
 
+## virtual keyword
+- The keyword virtual enables runtime polymorphism by ensuring that the correct function is called based on the object type, not the pointer type.
+> late binding ie waits if base class has derived and destructs those first.
+- With virtual, C++ uses dynamic binding (runtime binding).
+> With virtual a virtual table is created by Compiler and Object stores a vptr. and refrence is refered to derived at runtime.
 
+### 🔹 Where virtual is Used
+- ✔ Function overriding
+- ✔ Runtime polymorphism
+- ✔ Base-class pointers referring to derived objects
 
+- ❓ Can constructors be virtual?
+❌ No
+- ❓ Can destructors be virtual?
+✅ Yes (recommended)
 
+## Virtual Destructor
+- ✔ Ensures proper destruction of derived objects
+❌ Without it → memory leak
+
+## Abstrac
