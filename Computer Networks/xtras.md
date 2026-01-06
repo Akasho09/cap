@@ -24,3 +24,13 @@
 | `hostname`     | Display system hostname           | `hostname`                             |
 | `airport`      | Wi-Fi diagnostics (macOS only)    | `/System/Library/.../airport -I`       |
 
+## Dynamic Host Configuration Protocol
+DHCP, or Dynamic Host Configuration Protocol, is a networking protocol used to automatically assign IP addresses to devices connected to a network.
+
+When a device joins a network, it sends a broadcast request for an IP address. A DHCP server on the network responds by assigning an available IP address to the device, along with other network configuration details such as subnet mask, default gateway, and DNS server.
+
+This eliminates the need for manual IP address configuration on each device, simplifying network management. DHCP also helps prevent IP address conflicts by tracking which addresses are in use.
+
+DHCP is commonly used in networks with many devices, including home networks, small businesses, and large enterprises. It’s a widely adopted protocol supported by most devices, including computers, smartphones, and IoT devices.
+
+

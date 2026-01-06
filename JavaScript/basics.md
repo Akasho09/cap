@@ -11,13 +11,30 @@
     3. Timers (setTimeout)
 - If JavaScript waited for them synchronously, the app would freeze.
 
-### How async functions work in JavaScript
+### How async functions work in JavaScript : Event Loop in JavaScript
 JavaScript uses:
 1. Call Stack
 2. Web APIs
 3. Callback Queue / Microtask Queue
 4. Event Loop
 - Async tasks are handled outside the call stack and pushed back when ready.
+```js 
+console.log("A");
+
+setTimeout(() => {
+  console.log("B");
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log("C");
+});
+
+console.log("D");
+```
+A
+D
+C
+B
 
 ### Key points
 > async → function returns a Promise

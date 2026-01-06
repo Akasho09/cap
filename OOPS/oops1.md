@@ -16,7 +16,13 @@ in C++ is a function that is not a member of a class, but it is allowed to acces
 - Friend can be 
 1. Global Fn.
 2. A Class 
-3. Function of a Class
+3. Function of a Class :
+    - Forward declaration is mandatory
+    - Friendship is given to specific function, not whole class
+    - Friend declaration is written inside the class whose data is accessed
+    - Friendship is not mutual
+    - Friendship is not inherited
+[text](LB/codes/friend.cpp)
 ### 📌 Why do we need Friend Functions?
 - To allow external functions to access private data
 - Useful when two or more classes need to share data :
@@ -40,7 +46,7 @@ public:
     And in Method Overloading LHS is Object by default.
 
 - Keeps class design clean while allowing controlled access.
-> Friendship can NOT be Inherited .
+> Friendship can NOT be Inherited.
 
 ```c
 #include <iostream>
@@ -100,6 +106,7 @@ int main() {
 }
 ```
 > 📌 Issue: t1.ptr and t2.ptr point to the same memory.
+[text](LB/codes/shallowCopy.cpp)
 
 ## 🧠 2. Deep Copy
 - A deep copy copies the actual data, not just the address.
@@ -264,6 +271,12 @@ bird.fly();
 ❓ Is abstract class same as interface?
 ❌ No (in C++)
 
+Q: Can an abstract class be used as an interface?
+✔ Yes (if it contains only pure virtual functions)
+
+Q: Can an interface be an abstract class?
+❌ No (interface is a stricter concept)
+
 3. ***Inheritance***: A way to create new objects based on existing ones. It’s like how a child inherits traits from their parents.
 - Inheritance is an OOP concept where a new class (derived/child) acquires the properties and behaviors of an existing class (base/parent).
 > In simple words: reusing existing code by creating a new class from another class
@@ -283,7 +296,7 @@ bird.fly();
 > Inheritance is an OOP concept in which a derived class acquires the properties and methods of a base class, enabling code reuse and supporting polymorphism.
 > The default inheritance type of a class in C++ is private, while for a struct it is public.
 
-## 🔹 Types of Inheritance in OOP (C++)
+## 🔹 Types of Inheritance in OOP (C++) (S MM HH)
 1. 1️⃣ Single Inheritance
 -  👉 One child class inherits from one parent class.
 class A {
@@ -348,7 +361,6 @@ class C {
 
 class D : public B, public C {
 };
-
 
 
 4. Polymorphism: 

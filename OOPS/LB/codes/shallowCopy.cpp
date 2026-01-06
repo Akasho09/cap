@@ -8,7 +8,6 @@ public:
     example(int c){
         a=new int(c);
     }
-
 };
 
 class example2 {

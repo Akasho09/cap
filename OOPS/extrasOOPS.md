@@ -168,6 +168,18 @@ int Counter::count = 0;
 4. Prevent inheritance
 
 ## Singleton Class 
+- A Singleton class ensures that only one object (instance) of the class is created throughout the lifetime of the program, and provides a global access point to that instance.
+- 🔹 Why do we need Singleton?
+    - Shared resources (Logger, Configuration, Cache)
+    - Database connection manager
+    - Thread pool
+    - Device driver access
+- 👉 Prevents multiple conflicting instances
+### 🔑 Core Rules of Singleton
+- Private constructor → cannot create object directly
+- Static instance → single shared object
+- Public static method → access point
+- Disable copy & assignment
 ```cpp
 #include <iostream>
 using namespace std;
@@ -184,6 +196,10 @@ public:
         }
         return instance;
     }
+
+    // Disable copy
+    Singleton(const Singleton&) = delete;
+    Singleton& operator=(const Singleton&) = delete;
 
     void show() {
         cout << "Singleton Object Created";
@@ -203,6 +219,29 @@ int main() {
     cout << s1 << endl;
     cout << s2 << endl;   // same address
 }
+```
+```c
+class Singleton {
+private:
+    Singleton() {}
+
+public:
+    static Singleton& getInstance() {
+        static Singleton instance; // created once
+        return instance;
+    }
+
+    Singleton(const Singleton&) = delete;
+    Singleton& operator=(const Singleton&) = delete;
+};
+
+- usage :
+
+Singleton& s1 = Singleton::getInstance();
+Singleton& s2 = Singleton::getInstance();
+
+cout << (&s1 == &s2);  // true
+
 ```
 
 ## const
@@ -241,7 +280,7 @@ public:
 > Applies to class methods
 
 3. 3️⃣ const Objects
-> A const object can call only const member functions
+> A const object can call only const member functions.
 ```cpp
 const Account acc;
 acc.getBalance();   // ✅ allowed

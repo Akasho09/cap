@@ -57,7 +57,7 @@ Normalization helps in improving data consistency, integrity, and efficient stor
 
 | Feature       | MySQL             | PostgreSQL                       |
 | ------------- | ----------------- | -------------------------------- |
-| Type          | Relational DBMS   | Object-Relational DBMS           |
+| Type          | Relational DBMS   | *Object-Relational* DBMS         |
 | Developed by  | Oracle            | PostgreSQL Global Dev Group      |
 | First Release | 1995              | 1996                             |
 | License       | GPL (Open Source) | PostgreSQL License (Open Source) |
@@ -258,6 +258,6 @@ CREATE TABLE Employee (
 - HAVING → filter groups
 
 ## EXECUTION OF PRECEDENCE 
-- JOINT  
+- JOIN  
 - WHERE
 ... SO ON

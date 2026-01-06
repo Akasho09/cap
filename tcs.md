@@ -6,9 +6,7 @@
 - DBMS Doubt Clearing Session 1, FULL
 - DBMS Doubt Clearing Session 2, FULL
 
-
 ---
-
 
 Operating Systems – Level 1 Session
 https://player.uacdn.net/plus_recording/RKTG6KMYS2IQ6FV62B2L.webm

@@ -120,8 +120,7 @@ int* p = new int(10);   // stored in heap
 1. 1️⃣ Virtual Address Space of a Process
 - When a C/C++ program runs, the OS gives it a virtual address space, typically like this:
 
-
-## A pointer 
+## A pointer
 - is a variable that holds the address of another variable.
 
 ### 🔹 Why Pointers Are Needed?
@@ -146,6 +145,7 @@ int* p = nullptr;
 int* p;   // ❌ dangerous
 
 3. 3️⃣ Dangling Pointer
+- A dangling pointer is a pointer that points to a memory location that has already been freed or gone out of scope.
 int* p = new int(10);
 int* q = p;    // q points to the same memory as p
 delete p;      // memory freed
@@ -351,7 +351,6 @@ int main(){
     - C++ ✅ (namespace std)
 
 > C is a procedural programming language focused on functions, while C++ is a multi-paradigm language that extends C with object-oriented features like classes, inheritance, and polymorphism, making it more suitable for large-scale software development.
-
 
 ### Function overloading
 -  means having multiple functions with the same name but different parameter lists in the same scope.

@@ -166,8 +166,6 @@ Client                    Server
   |---- close() --------->|
 ```
 
-
-
 ## HTTP (HyperText Transfer Protocol) 
 - is a protocol used to transfer data between a client (browser) and a server.
     - It sends data in plain text

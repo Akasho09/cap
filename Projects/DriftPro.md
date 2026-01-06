@@ -1,6 +1,7 @@
 ## DriftPro – Project Description (Point-wise)
 - DriftPro is a full-stack web application implemtation of digital wallet app like Paytm.
-- **Turborepo monorepo architecture** 
+- **Turborepo for monorepo architecture** 
+    - Turborepo is a build system optimized for JavaScript and TypeScript, written in Rust.
     - Does not use RazorPay or Stripe , rather the bank is hard coded.
 - It is built using **Next.js** for both frontend rendering and API handling.
 - **TypeScript** is used across the project to ensure type safety and better code maintainability.
@@ -16,13 +17,14 @@
 - The entire application is **Dockerized** for consistent development and deployment.
 - The frontend is deployed on **Vercel**, while backend services and webhooks are hosted on **Render**.
 > The project demonstrates understanding of full-stack architecture, authentication flows, database design, caching, and deployment.
+- few rate limiting techniques using redis.
 
 ## Projects
-1. College-Based Database Management System.
+1. **College-Based Database Management System.**
 - My first major project was a College-Based Database Management System.It Was a group Project of DBMS Curriculm subject in our 2nd year. Its is based on Non Relational DataBase MongodB and MERN Stack. 
 >  This project demonstrates my understanding core concepts of database design, CRUD operations, and backend logic. 
 
-2. MediumPro : [text](../../copper/MediumPro)
+2. **MediumPro** : [text](../../copper/MediumPro)
 - I also built MediumPro – Clone of Medium Blogging App.
 - Its written using React for Frontend and Hono + Prisma backend.
 > Hono: A lightweight and feature-rich framework ideal for building web applications on Cloudflare Workers.
@@ -33,8 +35,9 @@
 
 ### Imps :
 - One thing that i remeber rn about it is i tried hardcoe the text editor and not use any text editr library. 
+- One thing I’d like to highlight is that I didn’t use any external text editor library. I implemented the editor functionality manually to better understand how text formatting and state handling work internally.
 
-3. Apple Scab Estimation Using CNN and Grad-CAM .
+3. **Apple Scab Estimation Using CNN and Grad-CAM** .
 - In our 7th sem we had to make a Minor Project based on Computer vision or Data Mining.
 - It was a Group Project we made a Apple Scab Estimation Using CNN and Grad-CAM .
 - It was more of Research Project than ...
@@ -56,14 +59,14 @@
     - Specific leafs collection of Apple of 5k.
 - Data Augmentation :
     - Data augmentation is done by applying controlled transformations like rotation, flipping, and brightness changes to training images to increase dataset diversity without altering labels.
-> Ninad Shukla, Sushila Palwe, Shubham, Mohit Rajani, Aaryan Suri.
+> Ninad Shukla, Sushila Palwe, Shubham, Mohit Rajani, Aaryan Suri : Plant Disease Detection and Localization using GRADCAM
 '''
 My role was primarily focused on the research and problem-definition aspect of the project. I worked on reviewing existing literature, identifying gaps—especially around model explainability—and helped define the scope of using Grad-CAM along with CNNs. I also contributed to dataset collection, augmentation strategies, and interpretation of Grad-CAM heatmaps to validate the model’s predictions.
 '''
 ### GOLDEN 
 > That was outside my direct implementation, but conceptually…
 
-4. DriftPro – Paytm for Desktop 
+
 
 
 ### ✅ How to Describe Projects in an Interview (Golden Formula)
@@ -94,8 +97,4 @@ I focused heavily on web performance and user experience, and as a result, the L
 
 I optimized these metrics through efficient asset loading, layout stability, and clean component design. This project reflects how I approach front-end development—not just visually, but also from a performance and user-centric perspective.
 
-## 
 
-I had a one-year gap after my 12th, which was due to circumstances beyond my control. During my 11th standard, the abrogation of Article 370 in Kashmir led to a prolonged shutdown, including suspension of internet services, transport, and regular schooling. This significantly disrupted academic continuity, and even examinations were conducted with a reduced syllabus.
-
-Shortly after, during my 12th standard, the COVID-19 pandemic further impacted the education system, making preparation inconsistent and highly uncertain.
