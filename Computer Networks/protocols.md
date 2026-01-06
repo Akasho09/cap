@@ -39,6 +39,19 @@
     - File transfer (FTP)
     - Remote login (SSH)
 
+| OSI Model    | TCP/IP Model   |
+| ------------ | -------------- |
+| 7 layers     | 4 layers       |
+| Theoretical  | Practical      |
+| Application  | Application    |
+| Presentation | —              |
+| Session      | —              |
+| Transport    | Transport      |
+| Network      | Internet       |
+| Data Link    | Network Access |
+| Physical     | Network Access |
+
+
 #### Features of TCP : 
 | Feature                 | Description                                 |
 | ----------------------- | ------------------------------------------- |

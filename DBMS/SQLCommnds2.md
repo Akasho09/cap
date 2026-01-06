@@ -214,3 +214,14 @@ SELECT C.ContactName , COUNT(O.OrderID) AS NumberOfOrders FROM CUSTOMERS AS C LE
 SELECT COUNTRY , COUNT(COUNTRY)  FROM CUSTOMERS GROUP BY COUNTRY HAVING COUNT(COUNTRY)>1;
 ```
 
+
+## A VIEW in SQL 
+- is a virtual table created using a SELECT query.
+- It does not store data physically; it stores only the query.
+> A VIEW is a named SQL query that behaves like a table but contains no data of its own.
+> A view in SQL is a virtual table created from a SELECT query that provides abstraction and security without storing data.
+
+### Updatable and Non-updatacble
+- A non-updatable view is a view where INSERT, UPDATE, or DELETE is not allowed because SQL cannot map the changes back to the base table clearly.
+- An updatable view is a view on which you can perform INSERT, UPDATE, and DELETE operations, and those changes reflect in the base table.
+

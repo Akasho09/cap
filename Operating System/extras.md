@@ -185,3 +185,14 @@ Hit Ratio = Number of cache hits / Total memory accesses
 | Waiting Queue   | Waiting for I/O        | OS                    |
 | Device Queue    | Waiting for devices    | Device controller     |
 | Suspended Queue | Swapped-out processes  | Medium-term scheduler |
+
+## Idle Process
+- CPU Idle Task (Kernel Idle Process)
+     - Runs when the ready queue is empty
+     - Often executes a simple infinite loop
+     - Puts CPU into low-power mode
+- 📌 Example:
+- Linux: idle / swapper
+- Windows: System Idle Process
+
+> Exists so the scheduler always has something to schedule

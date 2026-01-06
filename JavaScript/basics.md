@@ -82,10 +82,6 @@ B
 | Block Scope   | ❌             | ✅   | ✅     |
 | Global object | ✅             | ❌   | ❌     |
 
-
-
-
-
 ## JS VS TS 
 
 | Aspect          | JavaScript | TypeScript    |
@@ -95,6 +91,22 @@ B
 | Team scaling    | Hard       | Easy          |
 | Documentation   | Manual     | Types as docs |
 | Maintenance     | Costly     | Predictable   |
+
+## JavaScript Destructuring 
+- is a feature that allows you to extract values from arrays or objects and store them into separate variables in a clean and readable way.
+```js
+const arr = [10, 20, 30];
+const a = arr[0];
+const b = arr[1];
+- ✅ With Destructuring
+const [a, b, c] = [10, 20, 30];
+
+function greet({ name, age }) {}
+function greet(user) {
+  cons [name, age ] = user;
+}
+
+```
 
 
 

@@ -72,3 +72,13 @@ It compiles to plain JavaScript, so it runs anywhere JS runs.
 ## Git 
 - is a distributed version control system (VCS) used to track changes in source code, collaborate with teams, and manage different versions of a project efficiently.
 
+> GitHub is a cloud-based platform that hosts Git repositories and provides collaboration features like pull requests, issues, and code reviews.
+- 
+| Git                  | GitHub           |
+| -------------------- | ---------------- |
+| Version control tool | Hosting platform |
+| Works locally        | Works online     |
+| CLI-based            | Web + CLI        |
+
+- The main branch is the stable production-ready branch.
+
