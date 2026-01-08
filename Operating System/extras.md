@@ -67,7 +67,6 @@ Process exits
 ## Buffering 
 - is a technique used by the operating system to temporarily store data in memory (buffer) while it is being transferred between two devices or processes that operate at different speeds.
 
-
 ## Spooling (Simultaneous Peripheral Operations On-Line)
 Spooling is a technique used by the operating system to store I/O data temporarily on disk so that slow I/O devices (like printers) can work independently of faster processes (like the CPU).
 
@@ -196,3 +195,6 @@ Hit Ratio = Number of cache hits / Total memory accesses
 - Windows: System Idle Process
 
 > Exists so the scheduler always has something to schedule
+
+## Spin locking
+- Spin locking is a locking mechanism in which a thread keeps busy-waiting until it acquires the lock.

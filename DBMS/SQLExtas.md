@@ -63,3 +63,9 @@ FOREIGN KEY (ShipperID) REFERENCES Shippers(ShipperID);
 
 > , after INT .
 
+## trigger
+A trigger in SQL is a special stored program that automatically executes (fires) in response to a specific event on a table or view.
+
+> A trigger is a database object that automatically executes when a specified DML event occurs on a table.
+
+

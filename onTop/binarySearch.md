@@ -1,3 +1,11 @@
+## 🔑 Memory Trick
+- S-M-A-R-T
+    - Sorted
+    - Monotonic
+    - Access (random)
+    - Repeatable comparison
+    - Time reduction by half
+
 ## First and Last Occuremce
 ```c
 class Solution {

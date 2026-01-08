@@ -179,7 +179,7 @@ int Counter::count = 0;
 - Private constructor → cannot create object directly
 - Static instance → single shared object
 - Public static method → access point
-- Disable copy & assignment
+- **Disable copy & assignment**
 ```cpp
 #include <iostream>
 using namespace std;
@@ -363,3 +363,42 @@ public:
 - 👉 It makes code more readable, meaningful, and safer than using plain integers.
 > An enum is a user-defined data type that consists of a fixed set of named integral constants.
 
+## Inheritance   vs  Composition
+
+| Aspect                | Inheritance     | Composition   |
+| --------------------- | --------------- | ------------- |
+| Relationship          | IS-A            | HAS-A         |
+| Coupling              | Tight           | Loose         |
+| Flexibility           | Low             | High          |
+| Reuse                 | Via subclass    | Via objects   |
+| Change impact         | Risky           | Safer         |
+| Preferred in practice | ❌ Often avoided | ✅ Recommended |
+
+```c
+class Engine {
+public:
+    void start() {}
+};
+
+class Car {
+    Engine engine;   // Car HAS-A Engine
+public:
+    void startCar() {
+        engine.start();
+    }
+};
+```
+
+## Static Memory  vs Dynamic Memory
+
+| Feature         | Static Memory  | Dynamic Memory |
+| --------------- | -------------- | -------------- |
+| Allocation Time | Compile time   | Runtime        |
+| Size            | Fixed          | Flexible       |
+| Memory Area     | Stack / Data   | Heap           |
+| Speed           | Faster         | Slower         |
+| Deallocation    | Automatic      | Manual         |
+| Resize          | ❌ No           | ✅ Yes          |
+| Risk            | Stack overflow | Memory leak    |
+
+- in RAM obv cz it a process.

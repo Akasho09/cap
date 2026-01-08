@@ -150,6 +150,17 @@ int* p = new int(10);
 int* q = p;    // q points to the same memory as p
 delete p;      // memory freed
 > Now q is a dangling pointer
+OR
+```c
+int *p = new int(10);
+delete p; // => p is now dangling
+
+SOLUTION  : 
+
+int *p = new int(10);
+delete p;
+p = NULL
+```
 
 4. 4️⃣ Void Pointer
 void* p;
@@ -159,7 +170,8 @@ int** pp;
 
 > A reference is an alternative name for an already existing variable.
 [text](codes/refrence.cpp)
-
+ 
+> Garbage-collected languages do not have dangling pointers, because memory is freed only when no references exist.
 
 | Feature      | Reference    | Pointer       |
 | ------------ | ------------ | ------------- |

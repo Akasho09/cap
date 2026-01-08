@@ -204,6 +204,16 @@ ORDER BY COUNT(CustomerID) DESC;
 SELECT C.ContactName , COUNT(O.OrderID) AS NumberOfOrders FROM CUSTOMERS AS C LEFT JOIN ORDERS AS O  ON O.CustomerID=C.CustomerID  GROUP BY C.CustomerID;
 ```
 
+**IMP**
+4. Show patient_id, diagnosis from admissions. Find patients admitted multiple times for the same diagnosis.
+SELECT
+	patient_id , diagnosis
+FROM admissions
+	GROUP BY patient_id, diagnosis
+HAVING COUNT(*) > 1;
+
+
+
 ## The MySQL HAVING Clause
 - The HAVING clause was added to SQL because the WHERE keyword cannot be used with aggregate functions.
 

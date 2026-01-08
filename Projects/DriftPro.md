@@ -53,7 +53,7 @@
 - Plant Disease Detection and Localization using GRADCAM
 - More of Research :
     - Reserch papers only on PLANT LEAFS not specifically on Apple Leaf.
-    -  literature review
+    - literature review
 - problem-definition aspect and identifying gaps.
 - dataset collection  , Plant Leaf Collection from Kaggle .
     - Specific leafs collection of Apple of 5k.
@@ -65,9 +65,6 @@ My role was primarily focused on the research and problem-definition aspect of t
 '''
 ### GOLDEN 
 > That was outside my direct implementation, but conceptually…
-
-
-
 
 ### ✅ How to Describe Projects in an Interview (Golden Formula)
 1. 1️⃣ One-line overview

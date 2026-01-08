@@ -6,6 +6,10 @@ int factorial(int n){
      return n*factorial(n-1);
 }
 
+bool IsVowel(char a){
+    return string("aeiouAEIOU").find(a)!=string::npos;
+}
+
 int main(){
-    cout <<factorial(5) ;
+    cout <<factorial(5) <<"\n" <<IsVowel('a') <<" " <<IsVowel('b') <<" " <<IsVowel('d') <<" " <<IsVowel('O') <<" ";
 }

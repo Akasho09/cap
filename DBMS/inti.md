@@ -14,7 +14,7 @@
 BCNF (Boyce–Codd Normal Form):
 A stronger version of 3NF where every determinant is a candidate key.
 
-Normalization helps in improving data consistency, integrity, and efficient storage.
+- Normalization helps in improving data consistency, integrity, and efficient storage.
 
 
 ## 🔹 What is SQL?
@@ -28,7 +28,7 @@ Normalization helps in improving data consistency, integrity, and efficient stor
         - CREATE tables
         - INSERT data
         - SELECT data
-        - UPDATE / DELETE data
+        - UPDATE / DELETE data.
 
 ## 🔹 What is MySQL?
 - MySQL is a Database Management System (DBMS) that uses SQL to manage data.
@@ -54,7 +54,6 @@ Normalization helps in improving data consistency, integrity, and efficient stor
 - All use SQL but have different features.
 
 ## MYSQL VS POSTGRESQL
-
 | Feature       | MySQL             | PostgreSQL                       |
 | ------------- | ----------------- | -------------------------------- |
 | Type          | Relational DBMS   | *Object-Relational* DBMS         |
@@ -80,9 +79,7 @@ Normalization helps in improving data consistency, integrity, and efficient stor
 | Custom data types | ❌           | ✅                |
 | Stored procedures | Limited     | Powerful         |
 
-
 ## SQL DATA-TYPES :
-
 | Data Type               | Storage Size | Signed Range                    | Unsigned Range                  | Common Use          |
 | ----------------------- | ------------ | ------------------------------- | ------------------------------- | ------------------- |
 | **TINYINT**             | 1 Byte       | -128 to 127                     | 0 to 255                        | Flags, status (0/1) |
@@ -114,7 +111,6 @@ CREATE TABLE audio_files (
 INSERT INTO audio_files (file_name, audio_data)
 VALUES ('song.mp3', LOAD_FILE('/path/song.mp3'));
 ```
-
 
 ## DELETE , DROP , TRUNCATE 
 1. 🔹 1️⃣ DELETE

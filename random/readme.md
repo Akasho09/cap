@@ -29,4 +29,25 @@ Instead, all required authentication data is sent by the client with every reque
 ## DOM 
 - is a tree representation of an HTML document.
 
+## A JWT (JSON Web Token) 
+- is a compact, self-contained, and secure token used to authenticate and authorize users in web applications.
+
+> JWT is a token-based authentication mechanism where user information is securely transmitted as a JSON object between client and server.
+
+### 🔁 How JWT Authentication Works
+1. User logs in with credentials
+2. Server verifies credentials
+3. Server generates JWT and sends it to client
+4. Client stores JWT (localStorage / cookies)
+5. Client sends JWT in Authorization header
+    - Authorization: Bearer <token>
+6. Server verifies JWT and allows access
+
+### ✅ Advantages of JWT
+- Stateless authentication (no server-side session)
+- Scales well (microservices)
+- Fast & compact
+- Works across domains
+
+> JWT is a stateless, token-based authentication method that securely transfers user claims between client and server.
 
