@@ -1,15 +1,29 @@
 #include <iostream>
 using namespace std;
 
-int factorial(int n){
-     if(n<=2) return n;
-     return n*factorial(n-1);
-}
+class Car{
+public:
+    int weight ;
+     Car(int x) {
+        weight=x;
+        cout <<weight <<" \n";
+    }
 
-bool IsVowel(char a){
-    return string("aeiouAEIOU").find(a)!=string::npos;
-}
+    virtual ~Car(){} ;
+};
+
+class Maruti : public Car{
+    string color;
+public:
+    Maruti(int x , string c){
+        color=c;
+    }
+
+    void carDetails(){
+        cout <<color <<" \n";
+    }
+};
 
 int main(){
-    cout <<factorial(5) <<"\n" <<IsVowel('a') <<" " <<IsVowel('b') <<" " <<IsVowel('d') <<" " <<IsVowel('O') <<" ";
+    Car *m1 = new Maruti(230 , "Blue");
 }

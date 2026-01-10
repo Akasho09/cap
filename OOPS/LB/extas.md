@@ -415,7 +415,6 @@ int main() {
 - is a function for which the compiler tries to replace the function call with the actual function code at compile time, instead of performing a normal function call.
 > 👉 Functions defined inside a class are implicitly inline.
 
-
 ## virtual keyword
 - The keyword virtual enables runtime polymorphism by ensuring that the correct function is called based on the object type, not the pointer type.
 > late binding ie waits if base class has derived and destructs those first.
@@ -436,4 +435,127 @@ int main() {
 - ✔ Ensures proper destruction of derived objects
 ❌ Without it → memory leak
 
-## Abstrac
+## Calling Parent Constructor from Base 
+[text](codes/polyMorpExm.cpp)
+1. 1️⃣ Why virtual function is needed
+- Base-class pointer calling derived function requires runtime polymorphism
+
+2. 2️⃣ What happens without virtual
+- Function call is resolved at compile time
+- Base version (or error) is used
+
+3. 3️⃣ Why destructor should be virtual
+- Prevents memory leaks when deleting via base pointer
+
+> A base class pointer can call derived class methods only if the function is declared virtual in the base class.
+
+## final keyword :
+1. 1️⃣ On a virtual function → prevents overriding:
+```c
+class Base {
+public:
+    virtual void show() final {
+        cout << "Base show\n";
+    }
+};
+
+class Derived : public Base {
+public:
+    void show() {   // ❌ ERROR
+        cout << "Derived show\n";
+    }
+};
+```
+2. 2️⃣ On a class → prevents inheritance
+```c
+class Vehicle final {
+};
+
+class Car : public Vehicle {  // ❌ ERROR
+};
+```
+> 🔹 final + override (Best Practice)
+```c
+class Base {
+public:
+    virtual void run() {
+        cout << "Base run\n";
+    }
+};
+
+class Derived : public Base {
+public:
+    void run() override final {
+        cout << "Derived run\n";
+    }
+};
+```
+| Keyword | Applies To               | Meaning                              |
+| ------- | ------------------------ | ------------------------------------ |
+| `const` | variables/functions      | value or function cannot modify data |
+| `final` | class / virtual function | cannot inherit or override           |
+
+
+## CONSTRUCTOR CANT BE 
+- final 
+    - Constructors are NOT inherited, so they cannot be overridden anyway
+-  static 
+    - Object creation requires an instance context . static members belong to the class, not to objects
+- or abstract
+    - A constructor must have an implementation
+    - Base class constructor is always executed during object creation
+
+## If a base class has a parameterized constructor, the derived class MUST explicitly call it using an initializer list.
+- You defined a parameterized constructor
+> ❌ Compiler does NOT generate a default constructor anymore
+- ERROR CODE :  
+```c
+#include <iostream>
+using namespace std;
+
+class Car{
+public:
+    int weight ;
+     Car(int x) {
+        weight=x;
+        cout <<weight <<" \n";
+    }
+
+    virtual ~Car(){} ;
+};
+
+class Maruti : public Car{
+    string color;
+public:
+    Maruti(int x , string c){
+        color=c;
+    }
+
+    void carDetails(){
+        cout <<color <<" \n";
+    }
+};
+
+int main(){
+    Car *m1 = new Maruti(230 , "Blue");
+}
+```
+
+## 🔹 Can we use return inside a constructor?
+> ✅ Yes — but ONLY return; (no value)
+```c
+class Test {
+public:
+    Test(int x) {
+        if (x < 0) {
+            return;   // ✔️ exits constructor early
+        }
+        cout << "x = " << x << endl;
+    }
+};
+```
+```c
+    int A() { }    // ❌ invalid
+```
+> A constructor cannot return a value or have a return type; it may only use return; to exit early.
+- It returns Instance of a Class.
