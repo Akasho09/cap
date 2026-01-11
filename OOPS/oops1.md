@@ -157,7 +157,7 @@ int main() {
 }
 ```
 
-##    // Destructors
+##    // Destructors (tilde = ~)
 ~box()
 {
         delete breadth;
@@ -286,6 +286,8 @@ Q: Can an abstract class be used as an interface?
 
 Q: Can an interface be an abstract class?
 ❌ No (interface is a stricter concept)
+
+> ✔ Creating a pointer or reference to an abstract class is allowed but ❌ No, we cannot create an object of an abstract class directly.
 
 ### Abstract classes support all inheritance types — limitations come from C++ inheritance rules, not abstraction.
 

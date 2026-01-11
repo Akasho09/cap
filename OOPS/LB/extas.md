@@ -237,6 +237,14 @@ int** pp;
 | Polymorphism               | ✅ Yes           | ✅ Yes           |
 | Memory / Performance       | ❌ No difference | ❌ No difference |
 
+| Feature                  | `struct`                   | `class`                    |
+| ------------------------ | -------------------------- | -------------------------- |
+| Default access specifier | **public**                 | **private**                |
+| Access modifiers         | public, private, protected | public, private, protected |
+| Inheritance default      | public                     | private                    |
+| OOP support              | Yes                        | Yes                        |
+| Usage preference         | Data-focused               | Behavior-focused           |
+
 
 - 🔹 When to Use struct
     - ✔ For plain data structures
@@ -434,6 +442,7 @@ int main() {
 ## Virtual Destructor
 - ✔ Ensures proper destruction of derived objects
 ❌ Without it → memory leak
+> If a class is used polymorphically (has virtual functions or is used via base pointers), its destructor must be virtual.
 
 ## Calling Parent Constructor from Base 
 [text](codes/polyMorpExm.cpp)

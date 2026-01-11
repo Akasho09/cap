@@ -402,3 +402,7 @@ public:
 | Risk            | Stack overflow | Memory leak    |
 
 - in RAM obv cz it a process.
+
+## 🔹 Can a Derived Class Override a Private Virtual Function?
+[text](LB/codes/virtualPrivateFn.cpp)
+
