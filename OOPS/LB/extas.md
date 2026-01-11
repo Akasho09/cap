@@ -559,3 +559,29 @@ public:
 ```
 > A constructor cannot return a value or have a return type; it may only use return; to exit early.
 - It returns Instance of a Class.
+
+
+## explicit Constructor :
+- It tells the compiler: “Do not use this constructor for implicit conversions.”
+> avoids implicit conversion int → Test.
+
+| Case             | Allowed? |
+| ---------------- | -------- |
+| `Test t = 10;`   | ❌        |
+| `Test t(10);`    | ✔️       |
+| `Test t{10};`    | ✔️       |
+| `fun(10);`       | ❌        |
+| `fun(Test(10));` | ✔️       |
+
+### 🔑 Summary
+- explicit controls implicit conversions
+- Used mainly with single-argument constructors
+- Makes code safer and more predictable
+
+[text](codes/explicit.cpp)
+
+## virtual class
+> C++ has no virtual class keyword. The term usually refers to a virtual base class used to solve the diamond problem in multiple inheritance.
+
+## Inline virtual fns
+- Inline virtual functions are not useless; they can be inlined when the compiler knows the exact type or can devirtualize the call.

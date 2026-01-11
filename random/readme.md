@@ -51,3 +51,5 @@ Instead, all required authentication data is sent by the client with every reque
 
 > JWT is a stateless, token-based authentication method that securely transfers user claims between client and server.
 
+## API
+- An API is a set of rules that allows one software to talk to another software.

@@ -1,10 +1,10 @@
 ![alt text](image-2.png)
 
 ------
-### TO COVER :
-- Operating Systems - Doubt Clearing Session,  HALF 
-- DBMS Doubt Clearing Session 1, FULL
-- DBMS Doubt Clearing Session 2, FULL
+### LINKS:
+- Roadmaps_for_topics_of_placements
+https://github.com/imsubhra/Roadmaps_for_topics_of_placements?tab=readme-ov-file
+
 
 ---
 

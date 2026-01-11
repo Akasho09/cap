@@ -215,6 +215,7 @@ public:
 - Shape is an abstract class
 - It represents what a shape can do (draw)
 - It does NOT define how to draw
+[text](LB/codes/abstractClass.cpp)
 
 ### 📌 What is a Pure Virtual Function?
 - A pure virtual function is a function that:
@@ -273,14 +274,21 @@ bird.fly();
 ❓ Can abstract class have constructor?
 ✅ Yes
 
-❓ Is abstract class same as interface?
+- ❓ Is abstract class same as interface?
 ❌ No (in C++)
+### An abstract class used only for defining behavior, i.e.:
+- Only pure virtual functions
+- No data members (by convention)
+- Virtual destructor
 
 Q: Can an abstract class be used as an interface?
 ✔ Yes (if it contains only pure virtual functions)
 
 Q: Can an interface be an abstract class?
 ❌ No (interface is a stricter concept)
+
+### Abstract classes support all inheritance types — limitations come from C++ inheritance rules, not abstraction.
+
 
 3. ***Inheritance***: A way to create new objects based on existing ones. It’s like how a child inherits traits from their parents.
 - Inheritance is an OOP concept where a new class (derived/child) acquires the properties and behaviors of an existing class (base/parent).

@@ -25,7 +25,7 @@
 | `airport`      | Wi-Fi diagnostics (macOS only)    | `/System/Library/.../airport -I`       |
 
 ## Dynamic Host Configuration Protocol
-DHCP, or Dynamic Host Configuration Protocol, is a networking protocol used to automatically assign IP addresses to devices connected to a network.
+- DHCP, or Dynamic Host Configuration Protocol, is a networking protocol used to automatically assign IP addresses to devices connected to a network.
 
 When a device joins a network, it sends a broadcast request for an IP address. A DHCP server on the network responds by assigning an available IP address to the device, along with other network configuration details such as subnet mask, default gateway, and DNS server.
 
@@ -33,4 +33,18 @@ This eliminates the need for manual IP address configuration on each device, sim
 
 DHCP is commonly used in networks with many devices, including home networks, small businesses, and large enterprises. It’s a widely adopted protocol supported by most devices, including computers, smartphones, and IoT devices.
 
+## 8.8.8.8
+- 8.8.8.8 is a public DNS server IP address provided by Google.
+
+| Feature   | `nslookup google.com` | `8.8.8.8` in Chrome |
+| --------- | --------------------- | ------------------- |
+| Purpose   | DNS lookup            | Open website        |
+| Uses DNS? | ✅ Yes                 | ❌ No                |
+| Talks to  | DNS server            | Web server          |
+| Protocol  | DNS                   | HTTP / HTTPS        |
+| Port      | 53                    | 80 / 443            |
+| Output    | IP address            | Webpage or error    |
+
+> nslookup looks in DNS server for the IP of the url given while 8.8.8.8 tries to optn the url and shows the eroor of trying that and ip of the url.
+- nslookup performs DNS resolution, whereas entering 8.8.8.8 in a browser initiates an HTTP/HTTPS request to a DNS server, which results in an error.
 

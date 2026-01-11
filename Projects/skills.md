@@ -3,41 +3,6 @@
 - Express.js handles HTTP requests and responses and helps you structure your backend logic cleanly.
 > Express.js is a minimal Node.js framework that simplifies building web servers and REST APIs by providing routing, middleware, and request–response handling.
 
-
-## Next.js 
-- is a React framework used to build fast, SEO-friendly, production-ready web applications.
-- It extends React by handling routing, rendering, performance optimization, and backend APIs out of the box.
-
-### 🔹 What Problems Next.js Solves
-1. Rendering Flexibility
-- SSR (Server-Side Rendering) → Better SEO & faster first load 
-    - SSR renders the page on the server at request time, giving fresh data and better SEO.
-- SSG (Static Site Generation) → Ultra-fast pages
-    - SSG generates pages at build time, resulting in extremely fast static pages.
-- ISR (Incremental Static Regeneration) → Update static pages without rebuild
-![alt text](image.png)
-
-2. File-Based Routing
-- No manual router setup
-- Files = routes (/app, /pages)
-
-3. Backend in the Same Project
-- API Routes / Server Actions
-- Lets you build full-stack apps without a separate backend
-
-4. Performance Optimizations (Automatic)
-- Image optimization
-- Code splitting
-- Prefetching
-- Font optimization
-
-5. SEO & Core Web Vitals
-- Better LCP, FCP, CLS
-- Metadata handling for search engines
-
-> Next.js is a React framework that enables server-side rendering, static generation, and full-stack development with built-in performance and SEO optimizations.
-
-
 ## TypeScript 
 - is a statically typed superset of JavaScript that adds types, interfaces, and compile-time checks to help you build scalable, maintainable applications.
 It compiles to plain JavaScript, so it runs anywhere JS runs.

@@ -258,8 +258,13 @@ Browser sends cookie with every request.
 2. Browser checks local DNS cache
 3. If not found → asks DNS Resolver (ISP)
 4. Resolver contacts:
-    - Root Server
+    - Root Server :
+        - A Root DNS Server is the highest-level DNS server that directs DNS queries to the appropriate TLD servers.
+        - 13 logical root servers
+             - Named A to M
+             - 📌 13 is a logical limit, not physical.
     - TLD((Top-Level Domain)) Server (.com)
+        - A TLD (Top-Level Domain) is the last part of a domain name, and it represents the highest level in the DNS hierarchy below the root (.).
     - Authoritative DNS Server
 5. IP address is returned
 6. Browser connects to the website using that IP
@@ -271,4 +276,87 @@ Browser sends cookie with every request.
     - OS caches DNS results
     - ISPs cache DNS responses
 - This reduces lookup time and internet traffic.
+
+## TLDs
+1. 1️⃣ gTLD (Generic Top-Level Domain)
+- Used for general purposes.
+- Examples:
+    - .com – commercial
+    - .org – organizations
+    - .net – networks
+    - .edu – education
+    - .info – information
+
+2. 2️⃣ ccTLD (Country-Code Top-Level Domain)
+- Based on country codes.
+- Examples:
+    - .in – India
+    - .us – USA
+    - .uk – United Kingdom
+    - .jp – Japan
+
+3. 4️⃣ New gTLDs
+- Modern domain extensions.
+- Examples:
+    - .tech
+    - .app
+    - .dev
+    - .cloud
+
+## URL 
+![alt text](image-4.png)
+- A URL (Uniform Resource Locator) is the complete address of a resource on the internet, telling the browser:
+    - where the resource is
+    - how to access it
+> URL = protocol + location + resource
+1. 1️⃣ Protocol (Scheme)
+- Tells how to access the resource
+- Examples:
+    - http
+    - https
+    - ftp
+- https = secure (encrypted)
+
+2. 2️⃣ Domain Name
+- Human-readable name of the server
+    - Example: www.google.com
+- Converted to IP using DNS
+
+3. 3️⃣ Port (Optional)
+- Identifies the service on the server
+- Defaults:
+    - HTTP → 80
+    - HTTPS → 443
+
+4. 4️⃣ Path
+- Location of the resource on the server
+- Example:
+    - /search
+
+5. 5️⃣ Query String (Optional)
+- Sends data to server
+- Starts with ?
+- Example:
+    - ?q=chatgpt
+
+## URI | URL | URN 
+| Feature             | URI | URL | URN |
+| ------------------- | --- | --- | --- |
+| Identifies resource | ✅   | ✅   | ✅   |
+| Gives location      | ❌   | ✅   | ❌   |
+| Access method       | ❌   | ✅   | ❌   |
+| Human-readable      | ✅   | ✅   | ✅   |
+
+| String                   | Type          |
+| ------------------------ | ------------- |
+| `https://google.com`     | URL (and URI) |
+| `ftp://files.server.com` | URL           |
+| `mailto:admin@site.com`  | URI           |
+| `urn:isbn:9780131103627` | URN           |
+
+- URL => Location .
+- URN => Name.
+- URI => any name or location.
+
+> URLs are practically used to access resources on the web, URIs provide a general identification framework, and URNs are used for persistent naming in specific domains like ISBN and standards.
 
