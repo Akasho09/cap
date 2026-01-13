@@ -17,6 +17,8 @@ ADD CONSTRAINT marks_should_be>0&&<100 CHECK (marks BETWEEN 0 AND 100),
 ADD CONSTRAINT chk_age CHECK (age >= 18),
 ADD CONSTRAINT chk_gender CHECK (gender IN ('M','F','O'));
 
+> ALTER TABLE example  MODIFY id INT UNSIGNED ;
+> MODIFY adds UNSIGNED ontop to PRIMARY KEY.
 
 ## Replicate table
 
@@ -68,4 +70,10 @@ A trigger in SQL is a special stored program that automatically executes (fires)
 
 > A trigger is a database object that automatically executes when a specified DML event occurs on a table.
 
+## 4️⃣ Composite Primary Key (Id + Name both together)
+CREATE TABLE Student (
+    Id INT,
+    Name VARCHAR(50),
+    PRIMARY KEY (Id, Name)
+);
 

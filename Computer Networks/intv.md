@@ -78,3 +78,18 @@
 
 ## router
 A router is a Layer 3 networking device that connects multiple networks and forwards packets based on IP addresses using routing tables.
+
+
+## “TCP and UDP are transport layer protocols used for data transmission over a network.
+1. TCP (Transmission Control Protocol) is a connection-oriented and reliable protocol. It ensures:
+    - Data is delivered in order
+    - No data loss through acknowledgements and retransmissions
+    - Flow control and congestion control
+- Because of this reliability, TCP is used in applications where accuracy is critical, such as HTTP/HTTPS, email, and file transfer.
+
+2. UDP (User Datagram Protocol) is a connectionless and unreliable protocol. It:
+    - Does not guarantee delivery or ordering
+    - Does not perform retransmissions
+    - Has low latency and minimal overhead
+- Due to its speed, UDP is used in real-time applications like video streaming, online gaming, and VoIP, where occasional packet loss does not significantly affect user experience.
+> In short, TCP prioritizes reliability, while UDP prioritizes speed.”

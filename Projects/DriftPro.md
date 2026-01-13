@@ -18,6 +18,17 @@
 - The frontend is deployed on **Vercel**, while backend services and webhooks are hosted on **Render**.
 > The project demonstrates understanding of full-stack architecture, authentication flows, database design, caching, and deployment.
 - few rate limiting techniques using redis.
+- 
+- One of the main challenges I faced was handling concurrent transactions and ensuring data consistency across two independently deployed services. I addressed this by carefully managing transaction states, validations, and retries.
+
+- Another challenge was dealing with cold-start delays in the webhook service on Render. I designed the system so that transactions remain safe and idempotent even if the first request experiences latency.
+
+- Since the backend webhook is deployed on Render, it often goes into a cold state when inactive for a long time. As a result, the first request initiated by the user can experience significant latency, sometimes taking up to one or two minutes to process.
+
+- To address this, I designed the system in a way that maintains transactional durability even under concurrent requests, while simultaneously ensuring that the user experience remains smooth and responsive. Instead of blocking the UI, I allowed transactions to continue asynchronously in the background.
+
+- To improve user experience during this delay, I implemented React toast notifications, which provide real-time feedback to the user about the transaction status. This approach allows users to navigate across different pages without experiencing UI lag, while the transaction safely completes in the background.
+----
 
 ## Projects
 1. **College-Based Database Management System.**
