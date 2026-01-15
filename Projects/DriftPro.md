@@ -1,4 +1,5 @@
 ## DriftPro – Project Description (Point-wise)
+> DriftPro is a monorepo-based wallet application that separates user operations and bank verification into independent services, ensuring scalability, fault isolation, and real-world transaction reliability.
 - DriftPro is a full-stack web application implemtation of digital wallet app like Paytm.
 - **Turborepo for monorepo architecture** 
     - Turborepo is a build system optimized for JavaScript and TypeScript, written in Rust.

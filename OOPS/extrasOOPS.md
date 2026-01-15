@@ -406,3 +406,22 @@ public:
 ## 🔹 Can a Derived Class Override a Private Virtual Function?
 [text](LB/codes/virtualPrivateFn.cpp)
 
+## Upcasting   and  Downcasting  
+| Feature     | Upcasting      | Downcasting    |
+| ----------- | -------------- | -------------- |
+| Direction   | Derived → Base | Base → Derived |
+| Implicit    | ✅              | ❌              |
+| Safe        | ✅              | ⚠️             |
+| Needs cast  | ❌              | ✅              |
+| Best method | Automatic      | `dynamic_cast` |
+
+## Global Variable   and   Static Variable    
+| Feature            | Global Variable       | Static Variable           |
+| ------------------ | --------------------- | ------------------------- |
+| Declaration        | Outside all functions | Inside function / outside |
+| Scope              | Whole program         | Function or file only     |
+| Lifetime           | Entire program        | Entire program            |
+| Value retention    | ❌                     | ✅                         |
+| File accessibility | Across files          | ❌ (file-restricted)       |
+| Default value      | 0                     | 0                         |
+| Memory             | Data / BSS segment    | Data / BSS segment        |

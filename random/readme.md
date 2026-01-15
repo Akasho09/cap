@@ -53,3 +53,25 @@ Instead, all required authentication data is sent by the client with every reque
 
 ## API
 - An API is a set of rules that allows one software to talk to another software.
+
+## cloud service models
+> IaaS → Infrastructure only
+- 
+    - Virtual machines
+    - Storage
+    - Networking
+        - AWS EC2
+        - Google Compute Engine
+> PaaS → Platform to run your code
+- 
+    - You deploy code, platform handles the rest.
+    - 🛠️ You manage
+        - Application code
+        - Data
+    - Render
+    - Vercel
+> SaaS → Ready-to-use software
+- 
+    - Gmail
+    - Google Docs
+

@@ -23,14 +23,33 @@ void reverse(vector<int>&v){
     }
 }
 
+void print(int n){
+    char p = 'a';
+    for(int i=0;i<n;i++){
+        cout <<p++ <<" ";
+    }
+    p--;
+    for(int i=1;i<n;i++){
+        cout <<--p <<" ";
+    }
+    cout <<endl;
+}
+
+
 int main() {
+
+    for(int i=1;i<=5;i++){
+        print(i);
+    }
+
+
     // Derived d;
     // d.f();   // ❌ cannot inline
 
-    vector<int>v({1,2,3,4,5});
-    reverse(v);
-    for(int i : v){
-        cout <<i <<" ";
-    }
+    // vector<int>v({1,2,3,4,5});
+    // reverse(v);
+    // for(int i : v){
+    //     cout <<i <<" ";
+    // }
 
 }

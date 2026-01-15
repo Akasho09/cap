@@ -71,17 +71,116 @@ void selectionSort(int arr[], int n) {
 - Sort each half
 - Merge sorted halves
 - 
+| Case    | Time       |
+| ------- | ---------- |
+| Best    | O(n log n) |
+| Average | O(n log n) |
+| Worst   | O(n log n) |
+- 
 | Feature        | Merge Sort | Quick Sort |
 | -------------- | ---------- | ---------- |
 | Time (Best)    | O(n log n) | O(n log n) |
 | Time (Average) | O(n log n) | O(n log n) |
 | Time (Worst)   | O(n log n) | O(n²)      |
 | Space          | O(n)       | O(log n)   |
+|                |            | O(n)(worst)|
 | Stable         | ✅ Yes      | ❌ No       |
 | In-Place       | ❌ No       | ✅ Yes      |
+```c
+class Solution {
+public:
+    void merge(vector<int>& arr, int left, int mid, int right) {
+        int n1 = mid - left + 1;
+        int n2 = right - mid;
+
+        vector<int> L(n1), R(n2);
+
+        for (int i = 0; i < n1; i++)
+            L[i] = arr[left + i];
+        for (int j = 0; j < n2; j++)
+            R[j] = arr[mid + 1 + j];
+
+        int i = 0, j = 0, k = left;
+
+        while (i < n1 && j < n2) {
+            if (L[i] <= R[j]) {   // <= keeps stability
+                arr[k++] = L[i++];
+            } else {
+                arr[k++] = R[j++];
+            }
+        }
+
+        while (i < n1) arr[k++] = L[i++];
+        while (j < n2) arr[k++] = R[j++];
+    }
+
+    void mergeSort(vector<int>& arr, int left, int right) {
+        if (left < right) {
+            int mid = left + (right - left) / 2;
+
+            mergeSort(arr, left, mid);
+            mergeSort(arr, mid + 1, right);
+            merge(arr, left, mid, right);
+        }
+    }
+};
+```
 
 ## 🟢 Quick Sort (C++)
-- Pick a pivot
-- Place pivot in correct position
-- Recursively sort left & right subarrays
+- Quick Sort is a Divide and Conquer sorting algorithm that:
+    - Chooses a pivot
+    - Partitions the array around the pivot
+    - Recursively sorts the left and right subarrays
+- It is one of the fastest sorting algorithms in practice.
+![alt text](image.png)
+
+| Case    | Time       |
+| ------- | ---------- |
+| Best    | O(n log n) |
+| Average | O(n log n) |
+| Worst   | O(n²)      |
+
+```c
+class Solution {
+public:
+    int partition(vector<int>& arr, int low, int high) {
+        int pivot = arr[high];   // choose last element as pivot
+        int i = low - 1;
+
+        for (int j = low; j < high; j++) {
+            if (arr[j] < pivot) {
+                i++;
+                swap(arr[i], arr[j]);
+            }
+        }
+        swap(arr[i + 1], arr[high]);
+        return i + 1;  // pivot index
+    }
+
+    void quickSort(vector<int>& arr, int low, int high) {
+        if (low < high) {
+            int pi = partition(arr, low, high);
+            quickSort(arr, low, pi - 1);
+            quickSort(arr, pi + 1, high);
+        }
+    }
+};
+```
+
+
+### Stable sort .
+![alt text](image-1.png)
+
+- (5, A), (3, B), (5, C), (3, D)
+- (3, B), (3, D), (5, A), (5, C)
+
+> “Quick Sort is unstable because equal elements may be swapped across the pivot during partitioning.”
+
+| Feature    | Merge Sort        | Quick Sort     |
+| ---------- | ----------------- | -------------- |
+| Time       | Always O(n log n) | Avg O(n log n) |
+| Worst Case | Same              | O(n²)          |
+| Space      | O(n)              | O(log n)       |
+| Stable     | ✅                 | ❌              |
+| In-place   | ❌                 | ✅              |
 
