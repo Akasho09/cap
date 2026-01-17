@@ -62,10 +62,11 @@ useEffect(() => {
 ```js
 // 1️⃣ Create Context
 import { createContext } from "react";
-const UserContext = createContext();
+export const UserContext = createContext();
 ```
 ```js
 // 2️⃣ Provide Context (Provider)
+import {UserContext}  from './UserContext'
 function App() {
   const user = { name: "Akash", role: "Admin" };
 
@@ -104,7 +105,7 @@ function Dashboard() {
 - It can be used to access a DOM element directly.
 > useRef is a React Hook that lets you store a mutable value that does NOT cause a re-render when it changes.
 - It returns a mutable object with a single property: 
-- use .current to acesses variable.
+  - use .current to acesses variable.
 > const ref = useRef(initialValue);
 
 | Feature                | Explanation                            |
@@ -118,16 +119,24 @@ function Dashboard() {
 ### 
 1. Storing Mutable Values (Without Re-render) or PERSIST DATA ACROSS RE-RENDER.
 ```js
+import { useRef, useState } from "react";
+
 function Counter() {
-  const count = useRef(0);
+  const [count, setCount] = useState(0);
+  const renderCount = useRef(0);
 
-  const increment = () => {
-    count.current++;
-    console.log(count.current);
-  };
+  renderCount.current++;
 
-  return <button onClick={increment}>Click</button>;
+  return (
+    <>
+      <h2>Count: {count}</h2>
+      <h3>Renders: {renderCount.current}</h3>
+
+      <button onClick={() => setCount(count + 1)}>+</button>
+    </>
+  );
 }
+
 ```
 - ✔ Useful for:
     - Timers
@@ -245,6 +254,38 @@ const memoizedFunction = useCallback(() => {
 | Works on         | Callbacks           | Props comparison      |
 | Common use       | Event handlers      | Child components      |
 
+7. Custom Hooks 
+- are your own reusable Hooks that let you extract and share logic between React components.
+- They are just functions, but:
+  - their name must start with use
+  - they can use other Hooks (useState, useEffect, useContext, etc.)
+> A custom hook is a JavaScript function that starts with use and allows you to reuse stateful logic across multiple React components.
+### EXAMPLE :
+```js
+import { useState } from "react";
+
+function useCounter(initialValue = 0) {
+  const [count, setCount] = useState(initialValue);
+
+  const increment = () => setCount(c => c + 1);
+  const decrement = () => setCount(c => c - 1);
+
+  return { count, increment, decrement };
+}
+```
+```js
+function Counter() {
+  const { count, increment, decrement } = useCounter(10);
+
+  return (
+    <>
+      <h2>{count}</h2>
+      <button onClick={increment}>+</button>
+      <button onClick={decrement}>-</button>
+    </>
+  );
+}
+```
 ## 
 | Hook          | Purpose                     |
 | ------------- | --------------------------- |
@@ -255,3 +296,7 @@ const memoizedFunction = useCallback(() => {
 | `useMemo`     | Optimize calculations       |
 | `useCallback` | Memoize functions           |
 | `useReducer`  | Complex state logic         |
+
+- The useReducer is a React hook used to manage complex state logic in functional components. It works similarly to Redux: you define a reducer function that takes the current state and an action, and returns a new state.
+> useReducer is a React Hook used for managing complex state logic using a reducer function and dispatched actions.
+

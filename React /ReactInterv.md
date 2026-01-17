@@ -13,13 +13,16 @@
 
 ```js
 useEffect(() => {
-  console.log("Mounted");
+  const intervalId = setInterval(() => {
+    console.log("Running...");
+  }, 1000);
 
   return () => {
-    console.log("Unmounted");
+    clearInterval(intervalId); // stops interval on unmount
   };
 }, []);
 ```
+
 
 ## ✅ 2. Difference Between useState vs useEffect
 
@@ -166,3 +169,34 @@ function add(a, b) {
 }
 ```
 
+## fragments
+- ragments in React let you group multiple elements without adding extra nodes to the DOM.
+- Normally, a React component must return a single parent element. Fragments solve this problem cleanly.
+```JS
+function List() {
+  return (
+    <>
+      <li>Apple</li>
+      <li>Banana</li>
+    </>
+  );
+}
+```
+- 3️⃣ Fragment with key (Important!)
+items.map(item => (
+  <React.Fragment key={item.id}>
+    <h3>{item.name}</h3>
+    <p>{item.desc}</p>
+  </React.Fragment>
+));
+> ⚠️ Short syntax (<> </>) does NOT support keys.
+> Fragments let React components return multiple elements without extra wrappers.
+
+## How do you handle persistent state in React apps?
+Persistent state ensures that certain data remains available even after page reloads or across sessions. Common approaches include:
+1. localStorage or sessionStorage: Save state that persists across page reloads.
+2. Combine state hooks with effects: Use useState or useReducer together with useEffect to sync state with storage.
+3. IndexedDB: For larger or more complex client-side storage needs.
+4. Backend storage: Store state on a server/database via APIs for server-side persistence.
+5. State management libraries: Use Redux, Zustand, or Context API with persistence middleware.
+6. Cookies: Suitable for small pieces of data, like authentication tokens.

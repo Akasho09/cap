@@ -4,6 +4,11 @@
 - **Turborepo for monorepo architecture** 
     - Turborepo is a build system optimized for JavaScript and TypeScript, written in Rust.
     - Does not use RazorPay or Stripe , rather the bank is hard coded.
+        - **DRY principle** enforced at repo level
+        - **Faster Builds** with **Smart Caching**.
+        - Atomic Changes (Very Important)
+            - You can change multiple services in one commit.
+        - The trade-off is **larger repo size and tighter coupling**
 - It is built using **Next.js** for both frontend rendering and API handling.
 - **TypeScript** is used across the project to ensure type safety and better code maintainability.
 - **Tailwind CSS** is used for building a responsive and modern user interface.
@@ -20,6 +25,8 @@
 > The project demonstrates understanding of full-stack architecture, authentication flows, database design, caching, and deployment.
 - few rate limiting techniques using redis.
 - 
+
+### challenges
 - One of the main challenges I faced was handling concurrent transactions and ensuring data consistency across two independently deployed services. I addressed this by carefully managing transaction states, validations, and retries.
 
 - Another challenge was dealing with cold-start delays in the webhook service on Render. I designed the system so that transactions remain safe and idempotent even if the first request experiences latency.

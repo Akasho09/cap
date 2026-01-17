@@ -85,3 +85,33 @@ function Form() {
   return <input ref={inputRef} />;
 }
 ```
+
+5. 🔹 3️⃣ Pure Components
+- 👉 Optimized components
+- Re-render only if props/state change (shallow comparison)
+- ✅ Better performance
+- ❌ Shallow comparison pitfalls
+
+> A pure function is a function that is predictable, safe, and side-effect free.
+- For the same inputs, it always returns the same result.
+function add(a, b) {
+  return a + b;
+}
+- EXAMPLE :
+  - In functional components, we use React.memo().
+```js
+import React from "react";
+
+const UserProfile = React.memo(({ name, age }) => {
+  console.log("UserProfile rendered");
+  return (
+    <div>
+      <h2>Name: {name}</h2>
+      <h3>Age: {age}</h3>
+    </div>
+  );
+});
+
+export default UserProfile;
+```
+
