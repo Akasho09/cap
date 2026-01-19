@@ -276,21 +276,28 @@ bird.fly();
 
 - ❓ Is abstract class same as interface?
 ❌ No (in C++)
-### An abstract class used only for defining behavior, i.e.:
-- Only pure virtual functions
-- No data members (by convention)
-- Virtual destructor
+### Interface : 
+- An abstract class used only for defining behavior, i.e.:
+    - Only pure virtual functions
+    - No data members (by convention)
+    - Virtual destructor
+    - Supports 100% abstraction
+    - Methods are public by default
+    - Supports multiple inheritance
+    - No constructors or instance variables
+- Interface = 100% abstraction
+- Abstract class = partial abstraction
 
-Q: Can an abstract class be used as an interface?
-✔ Yes (if it contains only pure virtual functions)
+- Q: Can an abstract class be used as an interface?
+    - ✔ Yes (if it contains only pure virtual functions)
 
-Q: Can an interface be an abstract class?
-❌ No (interface is a stricter concept)
+- Q: Can an interface be an abstract class?
+    - ❌ No (interface is a stricter concept)
 
 > ✔ Creating a pointer or reference to an abstract class is allowed but ❌ No, we cannot create an object of an abstract class directly.
 
 ### Abstract classes support all inheritance types — limitations come from C++ inheritance rules, not abstraction.
-
+- Abstract classes lead to DIAMOND PROBLEM in multiple inheritance.
 
 3. ***Inheritance***: A way to create new objects based on existing ones. It’s like how a child inherits traits from their parents.
 - Inheritance is an OOP concept where a new class (derived/child) acquires the properties and behaviors of an existing class (base/parent).

@@ -32,6 +32,42 @@
 
 > Next.js is a React framework that enables server-side rendering, static generation, and full-stack development with built-in performance and SEO optimizations.
 
+## 3️⃣ What happens when you run next build?
+- Depending on the page, Next.js decides how to render it.
+| Type    | Where rendered     | Example               |
+| ------- | ------------------ | --------------------- |
+| **SSG** | Build time         | Blogs, landing pages  |
+| **SSR** | On every request   | Dashboard, auth pages |
+| **ISR** | Build + revalidate | Feeds, products       |
+| **CSR** | Browser            | Forms, modals         |
+
+## 5️⃣ Request flow (important)
+- Example: user opens /dashboard
+1. Browser → requests /dashboard
+2. Next.js server:
+- Runs page.tsx on server
+- Fetches data (DB / API)
+- Generates HTML
+- Server → sends HTML
+3. Browser:
+- Shows content instantly
+- Downloads JS
+- React hydrates the page
+
+> 📌 Hydration = HTML becomes interactive
+
+## 
+> In Next.js, every page is SSG by default unless you make it dynamic.
+
+| Requirement               | Use           |
+| ------------------------- | ------------- |
+| Same for everyone         | **SSG**       |
+| Needs auth / cookies      | **SSR**       |
+| Updates every few minutes | **ISR**       |
+| Heavy interactivity       | **CSR**       |
+| SEO important             | **SSG / SSR** |
+> In Next.js, pages are SSG by default. Pages become SSR when they depend on request-time data like cookies, headers, or no-store fetches. ISR is used when static pages need periodic updates.
+
 ## HTML5
 > HTML5 introduced semantic tags, native audio/video, powerful form controls, client-side storage, graphics APIs, and modern web APIs—making the web faster, cleaner, and plugin-free.
 

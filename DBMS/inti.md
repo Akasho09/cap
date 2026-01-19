@@ -325,6 +325,19 @@ SELECT id, name, salary
 FROM employee
 WHERE salary > 50000;
 ```
+### Can We Update a View?
+- ✅ Yes, if:
+    - Single table
+    - No GROUP BY, DISTINCT, JOIN
+    - No aggregate functions
+```SQL
+UPDATE Emp_Public
+SET department = 'HR'
+WHERE emp_id = 5;
+```
+- ❌ No, if:
+    - View uses joins
+    - Aggregates present
 
 ## What is a Cursor?
 - A cursor is a pointer that allows row-by-row processing of query results.
@@ -385,4 +398,48 @@ END;
 ```
 
 > Rollbacks are achieved using transaction logs and write-ahead logging, not by triggers.
+
+
+## SQL vs  MongoDB  
+| Feature        | SQL (MySQL / PostgreSQL) | MongoDB                          |
+| -------------- | ------------------------ | -------------------------------- |
+| Type           | Relational DB            | NoSQL (Document DB)              |
+| Data format    | Tables (rows & columns)  | JSON-like documents (BSON)       |
+| Schema         | Fixed schema             | Schema-less (flexible)           |
+| Joins          | ✅ Supported              | ❌ Limited (lookup)               |
+| Relationships  | Strong (FK, PK)          | Weak / embedded                  |
+| Scalability    | Vertical (scale up)      | Horizontal (scale out)           |
+| Transactions   | ✅ ACID                   | ✅ ACID (multi-doc supported now) |
+| Query language | SQL                      | MongoDB Query Language           |
+| Performance    | Complex queries          | High read/write                  |
+| Use case       | Structured data          | Rapidly changing data            |
+
+
+## two tables Employee and Dept and asked me to find dept wise max Salary. 
+- ✅ Requirement
+    -  Find department-wise maximum salary
+- ✅ Correct SQL Query
+```sql
+SELECT 
+    d.dept_name,
+    MAX(e.salary) AS max_salary
+FROM Employee e
+JOIN Dept d
+ON e.dept_id = d.dept_id
+GROUP BY d.dept_name;
+```
+- Show Employee Name Also
+```sql
+SELECT 
+    d.dept_name,
+    e.emp_name,
+    e.salary
+FROM Employee e
+JOIN Dept d ON e.dept_id = d.dept_id
+WHERE (e.dept_id, e.salary) IN (
+    SELECT dept_id, MAX(salary)
+    FROM Employee
+    GROUP BY dept_id
+);
+```
 

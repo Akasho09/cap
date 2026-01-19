@@ -5,7 +5,6 @@
 - Roadmaps_for_topics_of_placements
 https://github.com/imsubhra/Roadmaps_for_topics_of_placements?tab=readme-ov-file
 
-
 ---
 
 Operating Systems – Level 1 Session

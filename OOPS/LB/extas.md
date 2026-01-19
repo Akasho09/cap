@@ -459,6 +459,7 @@ int main() {
 > A base class pointer can call derived class methods only if the function is declared virtual in the base class.
 
 ## final keyword :
+> final is used to make a variable constant, prevent method overriding, or stop class inheritance.
 1. 1️⃣ On a virtual function → prevents overriding:
 ```c
 class Base {
@@ -499,11 +500,23 @@ public:
     }
 };
 ```
+
+3. final Variable (Constant)
+ >   final int MAX = 100;
+- Value cannot be changed
+- Must be initialized once
+
 | Keyword | Applies To               | Meaning                              |
 | ------- | ------------------------ | ------------------------------------ |
 | `const` | variables/functions      | value or function cannot modify data |
 | `final` | class / virtual function | cannot inherit or override           |
 
+### 
+- const: (make value or function read only)
+    - Used to make data or objects immutable.
+- final:
+    - Used to prevent inheritance or method overriding.
+> No, const cannot prevent inheritance in C++; the correct keyword for that purpose is final.
 
 ## CONSTRUCTOR CANT BE 
 - final 

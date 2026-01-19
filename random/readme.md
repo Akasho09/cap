@@ -31,8 +31,8 @@ Instead, all required authentication data is sent by the client with every reque
 
 ## A JWT (JSON Web Token) 
 - is a compact, self-contained, and secure token used to authenticate and authorize users in web applications.
-
-> JWT is a token-based authentication mechanism where user information is securely transmitted as a JSON object between client and server.
+> JWT is a stateless authentication mechanism used to securely transmit user information between client and server.
+![alt text](image.png)
 
 ### 🔁 How JWT Authentication Works
 1. User logs in with credentials
@@ -50,6 +50,47 @@ Instead, all required authentication data is sent by the client with every reque
 - Works across domains
 
 > JWT is a stateless, token-based authentication method that securely transfers user claims between client and server.
+### Structure  :
+- A JWT has three parts, separated by dots (.):
+> HEADER.PAYLOAD.SIGNATURE
+> eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
+eyJ1c2VySWQiOjQyLCJyb2xlIjoiYWRtaW4ifQ.
+SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+
+1. HEADER
+- Describes how the token is signed.
+- Example:
+{
+  "alg": "HS256",
+  "typ": "JWT"
+}
+- alg → Signing algorithm (HS256, RS256)
+- typ → Token type (JWT)
+> 👉 Base64Url encoded
+
+2. 2️⃣ Payload (Claims)
+- Contains user data + metadata(“Data about data.”).
+- Example:
+{
+  "userId": 42,
+  "role": "admin",
+  "exp": 1710000000
+}
+- Types of Claims
+    - Registered: exp, iat, iss
+    - Public: role, email
+    - Private: app-specific data
+    - ⚠️ Important: Payload is encoded, not encrypted
+    - ❌ Do NOT store passwords or secrets
+
+3. 3️⃣ Signature
+- Ensures the token was not tampered with.
+HMACSHA256(
+  base64Header + "." + base64Payload,
+  secretKey
+)
+- ✔ Verifies integrity
+- ✔ Prevents data modification
 
 ## API
 - An API is a set of rules that allows one software to talk to another software.
@@ -75,3 +116,27 @@ Instead, all required authentication data is sent by the client with every reque
     - Gmail
     - Google Docs
 
+## Authentication vs authorisation
+
+### Authentication
+Verifies the identity of a user.
+- Examples:
+    - Login with username & password
+    - OTP verification
+    - Google / GitHub OAuth login
+
+### Authorization
+What are you allowed to do?
+- Examples:
+    - Can you access admin panel?
+    - Can you edit/delete a post?
+    - Can you view private data?
+
+| Feature      | Authentication        | Authorization        |
+| ------------ | --------------------- | -------------------- |
+| Question     | Who are you?          | What can you do?     |
+| Happens when | First                 | After authentication |
+| Purpose      | Identity verification | Permission control   |
+| Example      | Login                 | Role-based access    |
+| Data used    | Credentials           | Roles / permissions  |
+| Failure      | Invalid user          | Access denied        |
