@@ -105,3 +105,6 @@ return, sizeof
 | Insertion / Deletion | ❌ Hard               | ✅ Easy                 |
 | STL support          | Limited              | Full STL support       |
 
+## queue back element 
+“In a queue ADT, only the front element is accessible. Direct access to the back element is not allowed, though some implementations may expose it.”
+

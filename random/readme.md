@@ -140,3 +140,64 @@ What are you allowed to do?
 | Example      | Login                 | Role-based access    |
 | Data used    | Credentials           | Roles / permissions  |
 | Failure      | Invalid user          | Access denied        |
+
+## API (Application Programming Interface) 
+- is a set of rules that allows two software systems to communicate with each other.
+> An API tells how to ask for data and what you will get back.
+> An API is a contract that defines how software components communicate; a URL is just one part of an API endpoint, not the API itself.
+
+## What is REST(Representational State Transfer)
+- REST is an architectural style used to design APIs that communicate over HTTP in a simple, scalable way.
+
+### 🔹 Core Principles of REST (Very Important)
+1. 1️⃣ Client–Server
+- Client (React / Browser)
+- Server (Node.js / Express)
+- Independent of each other
+
+2. 2️⃣ Stateless
+- Server does not remember client state
+- Every request contains all required info (token, data)
+- ✅ Enables scalability
+
+3. 3️⃣ Resource-Based
+- Everything is treated as a resource
+- Identified using URLs
+
+4. 4️⃣ HTTP Methods (CRUD Mapping)
+| Operation | HTTP Method |
+| --------- | ----------- |
+| Create    | POST        |
+| Read      | GET         |
+| Update    | PUT / PATCH |
+| Delete    | DELETE      |
+
+5. 5️⃣ Standard Response Codes
+| Code | Meaning      |
+| ---- | ------------ |
+| 200  | OK           |
+| 201  | Created      |
+| 400  | Bad Request  |
+| 401  | Unauthorized |
+| 404  | Not Found    |
+| 500  | Server Error |
+
+- exaample:
+GET    /api/users      → fetch users
+POST   /api/users      → create user
+GET    /api/users/1    → fetch user 1
+PUT    /api/users/1    → update user
+DELETE /api/users/1    → delete user
+
+| Feature   | REST API               | Website    |
+| --------- | ---------------------- | ---------- |
+| Response  | JSON                   | HTML       |
+| UI        | ❌ No                   | ✅ Yes      |
+| Used by   | Frontend / Mobile apps | Humans     |
+| Stateless | ✅ Yes                  | ❌ Often no |
+
+### An API is RESTful if it:
+- Follows REST principles
+    - Uses proper HTTP methods
+    - Is stateless
+    - Uses meaningful URLs

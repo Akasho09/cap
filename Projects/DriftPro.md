@@ -1,14 +1,13 @@
 ## DriftPro – Project Description (Point-wise)
-> DriftPro is a monorepo-based wallet application that separates user operations and bank verification into independent services, ensuring scalability, fault isolation, and real-world transaction reliability.
-- DriftPro is a full-stack web application implemtation of digital wallet app like Paytm.
+- DriftPro is a full-stack wallet based web application. 
 - **Turborepo for monorepo architecture** 
     - Turborepo is a build system optimized for JavaScript and TypeScript, written in Rust.
-    - Does not use RazorPay or Stripe , rather the bank is hard coded.
         - **DRY principle** enforced at repo level
         - **Faster Builds** with **Smart Caching**.
         - Atomic Changes (Very Important)
             - You can change multiple services in one commit.
         - The trade-off is **larger repo size and tighter coupling**
+- Does not use RazorPay or Stripe , rather the bank is hard coded.
 - It is built using **Next.js** for both frontend rendering and API handling.
 - **TypeScript** is used across the project to ensure type safety and better code maintainability.
 - **Tailwind CSS** is used for building a responsive and modern user interface.
@@ -26,7 +25,7 @@
 - few rate limiting techniques using redis.
 - 
 
-### challenges
+### challenges : 
 - One of the main challenges I faced was handling concurrent transactions and ensuring data consistency across two independently deployed services. I addressed this by carefully managing transaction states, validations, and retries.
 
 - Another challenge was dealing with cold-start delays in the webhook service on Render. I designed the system so that transactions remain safe and idempotent even if the first request experiences latency.
@@ -40,7 +39,7 @@
 
 ## Projects
 1. **College-Based Database Management System.**
-- My first major project was a College-Based Database Management System.It Was a group Project of DBMS Curriculm subject in our 2nd year. Its is based on Non Relational DataBase MongodB and MERN Stack. 
+- My first major project was a College-Based Database Management System.It Was a group Project of DBMS Curriculm subject in our 2nd year. Its is based on Non Relational DataBase MongodB and MERN Stack.
 >  This project demonstrates my understanding core concepts of database design, CRUD operations, and backend logic. 
 
 2. **MediumPro** : [text](../../copper/MediumPro)
@@ -53,7 +52,6 @@
 > This Project demonstrates my type-safe coding using TypeScript.
 
 ### Imps :
-- One thing that i remeber rn about it is i tried hardcoe the text editor and not use any text editr library. 
 - One thing I’d like to highlight is that I didn’t use any external text editor library. I implemented the editor functionality manually to better understand how text formatting and state handling work internally.
 
 3. **Apple Scab Estimation Using CNN and Grad-CAM** .
@@ -69,7 +67,7 @@
 - Streamlit is an open-source Python framework used to build interactive web applications for data science, machine learning, and AI projects — without needing frontend skills like HTML, CSS, or JavaScript.
 
 ### My part :
-- Plant Disease Detection and Localization using GRADCAM
+- Plant Disease Detection and Localization using GRADCAM(Gradient-weighted Class Activation Map)
 - More of Research :
     - Reserch papers only on PLANT LEAFS not specifically on Apple Leaf.
     - literature review
@@ -81,6 +79,7 @@
 > Ninad Shukla, Sushila Palwe, Shubham, Mohit Rajani, Aaryan Suri : Plant Disease Detection and Localization using GRADCAM
 '''
 My role was primarily focused on the research and problem-definition aspect of the project. I worked on reviewing existing literature, identifying gaps—especially around model explainability—and helped define the scope of using Grad-CAM along with CNNs. I also contributed to dataset collection, augmentation strategies, and interpretation of Grad-CAM heatmaps to validate the model’s predictions.
+- in Data Preprocessing and Offline Data Augmentation.
 '''
 ### GOLDEN 
 > That was outside my direct implementation, but conceptually…

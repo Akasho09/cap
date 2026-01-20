@@ -120,6 +120,21 @@ int main()
     return 0;
 }
 ```
+### Memory layout of D (problematic):
+1. Initial :
+```yml
+D
+├── B
+│   └── A::x
+└── C
+    └── A::x
+2. Now: 
+
+D
+├── shared A::x   ✅ only ONE
+├── B (ref → A)
+└── C (ref → A)
+```
 
 ## A static method (static member function) 
 - is a function that belongs to the class rather than to any specific object of the class.
@@ -425,3 +440,63 @@ public:
 | File accessibility | Across files          | ❌ (file-restricted)       |
 | Default value      | 0                     | 0                         |
 | Memory             | Data / BSS segment    | Data / BSS segment        |
+
+
+## vbptr vs vtable  OR Virtual inheritance vs Runtime Poly
+1. 🔹 Virtual inheritance
+- Solves the diamond problem
+- Ensures only ONE shared base-class subobject
+- Removes data/member ambiguity
+- Affects object layout and construction
+
+2. 🔹 vtable
+- Solves runtime polymorphism
+- Used for virtual function dispatch
+- Has nothing to do with duplicate base subobjects
+
+> ⚠️ vbptr ≠ vtable
+
+## Forward Declaration (C++)
+- Forward declaration means telling the compiler in advance that something exists, without giving its full definition yet.
+
+### Why is Forward Declaration needed?
+- To resolve circular dependency between classes
+- To let the compiler know the name and type before actual definition
+- To reduce compile time
+- example :
+1. 1️⃣ Forward Declaration of a Class
+```cpp
+class B;   // forward declaration
+
+class A {
+    B* obj;   // allowed (pointer/reference)
+};
+```
+2. 2️⃣ When Forward Declaration is NOT enough
+```c
+class B;  
+
+class A {
+    B obj;   // ❌ ERROR (size of B unknown)
+};
+```
+3. Forward Declaration with Friend Function
+```c
+class B;   // forward declaration
+
+class A {
+    friend void add(A, B);
+};
+
+class B {
+    friend void add(A, B);
+};
+```
+- Key Rules (Very Important ⭐)
+- Forward declaration allows:
+    - ✔️ pointers
+    - ✔️ references
+- Does NOT allow:
+    - ❌ object creation
+    - ❌ access to members
+

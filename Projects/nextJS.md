@@ -251,7 +251,6 @@
     - Performance loss
 > Hydration is the process of attaching JavaScript behavior to server-rendered HTML so the page becomes interactive without rebuilding the DOM.
 
-
 ## SSG (Static Site Generation)?
 - SSG is a rendering technique where HTML pages are generated at build time, stored as static files, and served directly to users — no server rendering per request.
 > SSG is a technique where pages are pre-rendered into static HTML during build time and served instantly to users.

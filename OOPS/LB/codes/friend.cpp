@@ -9,10 +9,7 @@ class B {
     //     return a.privateData;
     // }
 };
-class C {
-    public:
-    int inMemberFriendFunction(A a);
-};
+
 
 class A {
     int privateData;
