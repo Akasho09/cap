@@ -11,7 +11,7 @@
 3. Third Normal Form (3NF):
 - A table is in 3NF if it is in 2NF and there is no transitive dependency, meaning non-key attributes do not depend on other non-key attributes.
 
-BCNF (Boyce–Codd Normal Form):
+4. BCNF (Boyce–Codd Normal Form):
 A stronger version of 3NF where every determinant is a candidate key.
 
 - Normalization helps in improving data consistency, integrity, and efficient storage.
@@ -398,7 +398,6 @@ END;
 ```
 
 > Rollbacks are achieved using transaction logs and write-ahead logging, not by triggers.
-
 
 ## SQL vs  MongoDB  
 | Feature        | SQL (MySQL / PostgreSQL) | MongoDB                          |

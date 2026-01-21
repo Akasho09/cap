@@ -320,6 +320,7 @@ void print(const Account& acc) {
 ## 🔹 Types of Constructors in C++
 - A constructor is a special member function of a class that is automatically called when an object is created.
 - Its name is same as the class name and it has no return type.
+
 1. 1️⃣ Default Constructor
 class Test {
 public:
@@ -357,6 +358,7 @@ public:
 ```
 ✔ Prevents shallow copy
 ✔ Important for dynamic memory
+> ✔️ It must take reference, otherwise infinite recursion
 
 4. Private Constructor
 - A constructor declared private to restrict object creation.
@@ -405,7 +407,6 @@ public:
 ```
 
 ## Static Memory  vs Dynamic Memory
-
 | Feature         | Static Memory  | Dynamic Memory |
 | --------------- | -------------- | -------------- |
 | Allocation Time | Compile time   | Runtime        |
@@ -429,6 +430,15 @@ public:
 | Safe        | ✅              | ⚠️             |
 | Needs cast  | ❌              | ✅              |
 | Best method | Automatic      | `dynamic_cast` |
+
+```c
+Animal* a = new Dog();     // Upcasting
+Dog* d = dynamic_cast<Dog*>(a);  // Downcasting
+
+if (d) {
+    d->sound();           // Dog barks
+}
+```
 
 ## Global Variable   and   Static Variable    
 | Feature            | Global Variable       | Static Variable           |
@@ -500,3 +510,44 @@ class B {
     - ❌ object creation
     - ❌ access to members
 
+## Lifecycle of an Object
+The object lifecycle is the sequence of events from object creation to destruction, including memory allocation, initialization, usage, and deallocation.
+
+### 🔄 Object Lifecycle Stages
+1. 1️⃣ Declaration
+- The object name is introduced.
+
+2. 2️⃣ Instantiation (Creation)
+- Memory is allocated
+- Constructor is called
+
+3. 3️⃣ Initialization
+- Constructor initializes data members
+
+4. 4️⃣ Usage
+- Object methods are called
+- Object performs operations
+
+5. 5️⃣ Destruction
+- Destructor is called
+- Memory is released
+
+> Declaration → Instantiation → Initialization → Usage → Destruction
+
+| Stack Object         | Heap Object        |
+| -------------------- | ------------------ |
+| Automatic allocation | Dynamic allocation |
+| Auto destruction     | Manual deletion    |
+| Faster               | Slightly slower    |
+
+
+## 4️⃣ Does Data Get Copied in Derived Class?
+- ❌ NO copying happens
+- What actually happens?
+    - Base class data becomes part of the derived object
+    - Memory is directly included, not copied
+---
+[ A::x ][ B::y ]
+---
+- ✔️ No duplication
+- ✔️ No pointers (except vptr for virtual functions)

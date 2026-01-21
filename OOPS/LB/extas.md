@@ -427,6 +427,7 @@ int main() {
 - The keyword virtual enables runtime polymorphism by ensuring that the correct function is called based on the object type, not the pointer type.
 > late binding ie waits if base class has derived and destructs those first.
 - With virtual, C++ uses dynamic binding (runtime binding).
+    - Dynamic binding is the process where the function call is resolved at runtime based on the actual object type, not the pointer type.
 > With virtual a virtual table is created by Compiler and Object stores a vptr. and refrence is refered to derived at runtime.
 
 ### 🔹 Where virtual is Used

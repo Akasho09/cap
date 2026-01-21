@@ -1,5 +1,4 @@
 ## Process     vs       Thread
-
 | Feature           | Process                                 | Thread                                      |
 | ----------------- | --------------------------------------- | ------------------------------------------- |
 | Definition        | Independent program in execution        | Smallest unit of execution within a process |
@@ -36,8 +35,8 @@
     - Thread switch mostly preserves cache locality
 
 - 🔹 Simple Analogy
-    - Process switch → Changing houses (move furniture, electricity, setup)
-    - Thread switch → Changing rooms in the same house
+    - Process switch → Changing houses (move furniture, electricity, setup).
+    - Thread switch → Changing rooms in the same house.
 
 ## 🔹 1. Deadlock Prevention
 ➡ Prevent at least one of the four deadlock conditions so deadlock can never occur.
