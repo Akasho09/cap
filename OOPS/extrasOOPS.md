@@ -551,3 +551,36 @@ The object lifecycle is the sequence of events from object creation to destructi
 ---
 - ✔️ No duplication
 - ✔️ No pointers (except vptr for virtual functions)
+
+## How can we make a C++ class such that objects of it can only be created using new operator? If user tries to create an object directly, the program produces compiler error.
+
+- By making destructor private
+```c
+
+// Objects of test can only be created using new
+class Test
+{
+private:
+    ~Test() {}
+friend void destructTest(Test* );
+};
+ 
+// Only this function can destruct objects of Test
+void destructTest(Test* ptr)
+{
+    delete ptr;
+}
+ 
+int main()
+{
+    // create an object
+    Test *ptr = new Test;
+ 
+    // destruct the object
+    destructTest (ptr);
+ 
+    return 0;
+}
+```
+
+- Cant make construcotr private cz initlization is to be done using 'new' not friend fn.

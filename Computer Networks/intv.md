@@ -44,6 +44,13 @@
 
 > The browser resolves DNS, establishes a TCP and TLS connection, sends an HTTP request, receives a response, and renders the webpage.
 
+1. URL Parsing – Browser checks protocol (HTTP/HTTPS), domain name, and path
+2. DNS Lookup – Domain name is resolved to an IP address
+3. TCP Connection – Browser establishes a TCP connection with the server (If HTTPS, TLS handshake also happens)
+4. HTTP Request – Browser sends an HTTP request to the server
+5. Server Processing – Server processes the request and prepares a response
+6. HTTP Response – Server sends HTML/CSS/JS/data back
+7. Rendering – Browser parses HTML, builds DOM, CSSOM, executes JS, and renders the page
 
 ## Difference between Hub, Switch, and Router
 ![alt text](image-5.png)
@@ -86,6 +93,13 @@ A router is a Layer 3 networking device that connects multiple networks and forw
     - No data loss through acknowledgements and retransmissions
     - Flow control and congestion control
 - Because of this reliability, TCP is used in applications where accuracy is critical, such as HTTP/HTTPS, email, and file transfer.
+### TCP Maintains Connection State
+- TCP keeps track of:
+    - Sequence numbers
+    - Acknowledgments
+    - Window size (flow control)
+    - Retransmissions
+> ➡️ Hence, connection-oriented
 
 2. UDP (User Datagram Protocol) is a connectionless and unreliable protocol. It:
     - Does not guarantee delivery or ordering
@@ -93,3 +107,11 @@ A router is a Layer 3 networking device that connects multiple networks and forw
     - Has low latency and minimal overhead
 - Due to its speed, UDP is used in real-time applications like video streaming, online gaming, and VoIP, where occasional packet loss does not significantly affect user experience.
 > In short, TCP prioritizes reliability, while UDP prioritizes speed.”
+
+### TCP data is encrypted using TLS, while UDP does not support TLS directly; instead, security is achieved using DTLS or QUIC.
+| Protocol    | Transport | Encrypted? | Method         |
+| ----------- | --------- | ---------- | -------------- |
+| HTTPS       | TCP       | ✅          | TLS            |
+| UDP (plain) | UDP       | ❌          | None           |
+| Secure UDP  | UDP       | ✅          | DTLS           |
+| HTTP/3      | UDP       | ✅          | QUIC (TLS 1.3) |

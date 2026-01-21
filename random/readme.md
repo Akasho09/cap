@@ -201,3 +201,17 @@ DELETE /api/users/1    → delete user
     - Uses proper HTTP methods
     - Is stateless
     - Uses meaningful URLs
+
+## Macros are preprocessor directives that perform text substitution before compilation.
+1. 1️⃣ Object-like Macro
+#define PI 3.14
+- Replaces every PI with 3.14
+
+2. 2️⃣ Function-like Macro
+#define SQUARE(x) ((x) * (x))
+
+- Inline functions do type checking for parameters, macros don\'t
+- Macros are processed by pre-processor and inline functions are processed in later stages of compilation.
+- Macros cannot have return statement, inline functions can.
+- Macros are prone to bugs and errors, inline functions are not.
+

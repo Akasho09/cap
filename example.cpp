@@ -1,34 +1,26 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 
-class B;              // forward declaration
-
-class A {
-private:
-    int x = 10;
-    friend void add(A, B);
+class Test {
+public:
+   Test(Test &t) { }
+   Test()        { }
 };
 
-class B {
-private:
-    int y = 20;
-    friend void add(A, B);
-};
-
-void add(A a, B b) {  // definition
-    cout << a.x + b.y;
+Test fun()
+{
+    cout << "fun() Called \n";
+    Test t;
+    return t;
 }
 
-int main(){
-    A a;
-    B b;
-
-     add(a,b);
-
+int main()
+{
+    Test t1;
+    Test t2 = fun();
+    // Test t2 (fun());
+    return 0;
 }
-
-
-
 // #include <iostream>
 // using namespace std;
 

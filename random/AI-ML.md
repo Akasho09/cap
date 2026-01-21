@@ -60,3 +60,19 @@
     - Hierarchical Clustering
     - PCA
 
+## AGI vs Current AI (Very Important)
+### 🔸 Current AI (Narrow AI)
+- Designed for specific tasks
+- Cannot generalize beyond training
+- Examples:
+    - Chatbots
+    - Recommendation systems
+    - Face recognition
+- 👉 This is what we use today
+
+### 🔹 AGI (General AI)
+- Can reason, plan, learn, and adapt
+- Works across multiple unrelated tasks
+- Learns like a human
+- 👉 AGI does NOT exist yet
+
