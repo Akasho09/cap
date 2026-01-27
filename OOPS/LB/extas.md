@@ -170,7 +170,7 @@ int** pp;
 
 > A reference is an alternative name for an already existing variable.
 [text](codes/refrence.cpp)
- 
+
 > Garbage-collected languages do not have dangling pointers, because memory is freed only when no references exist.
 
 | Feature      | Reference    | Pointer       |
@@ -182,7 +182,6 @@ int** pp;
 | Safety       | Safer        | Less safe     |
 
 > The Program Counter (PC) is a special CPU register that stores the address of the next instruction to be executed.
-
 
 ## Procedural Programming (POP)
 - Program is written as a sequence of functions/procedures that operate on data.

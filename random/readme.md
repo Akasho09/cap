@@ -14,6 +14,7 @@ Instead, all required authentication data is sent by the client with every reque
 
 ## Cookies 
 - are small pieces of data stored in the user’s browser by a website to remember information across requests.
+
 ### 🔹 Why Cookies Are Needed
 - HTTP is stateless → the server forgets everything after a response.
     - Cookies help maintain state.
@@ -25,6 +26,28 @@ Instead, all required authentication data is sent by the client with every reque
     - Login → server creates session
     - Cookie stores sessionId
     - Server checks session on each request
+    
+| Feature        | Cookies | Local Storage |
+| -------------- | ------- | ------------- |
+| Sent to server | ✅ Yes   | ❌ No          |
+| Size limit     | ~4 KB   | ~5–10 MB      |
+| Auto attach    | ✅ Yes   | ❌ No          |
+| Security flags | ✅ Yes   | ❌ No          |
+
+## Stateless vs Session based auth
+| Feature                | **Session-based Authentication** | **Stateless Authentication (JWT / Token)** |
+| ---------------------- | -------------------------------- | ------------------------------------------ |
+| State stored on server | ✅ Yes (session data)             | ❌ No                                       |
+| Client stores          | Session ID (cookie)              | Token (JWT)                                |
+| Server memory usage    | High (many sessions)             | Low                                        |
+| Scalability            | ❌ Hard (sticky sessions)         | ✅ Easy                                     |
+| Horizontal scaling     | Difficult                        | Easy                                       |
+| CSRF risk              | Higher                           | Lower (with proper setup)                  |
+| Mobile / API friendly  | ❌ Less                           | ✅ Yes                                      |
+| Logout handling        | Easy (destroy session)           | Hard (token expiry / blacklist)            |
+| Typical use            | Traditional web apps             | REST APIs, microservices                   |
+
+
 
 ## DOM 
 - is a tree representation of an HTML document.
@@ -215,3 +238,13 @@ DELETE /api/users/1    → delete user
 - Macros cannot have return statement, inline functions can.
 - Macros are prone to bugs and errors, inline functions are not.
 
+## Default values in arrays 
+| Array Type            | Default Values |
+| --------------------- | -------------- |
+| Local array           | ❌ Garbage      |
+| Static array          | ✅ 0            |
+| Global array          | ✅ 0            |
+| `new int[n]`          | ❌ Garbage      |
+| `new int[n]()`        | ✅ 0            |
+| Partially initialized | Remaining = 0  |
+| `vector<int>`         | ✅ 0            |

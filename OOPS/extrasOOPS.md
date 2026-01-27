@@ -584,3 +584,21 @@ int main()
 ```
 
 - Cant make construcotr private cz initlization is to be done using 'new' not friend fn.
+
+
+## Aggregation vs Composition     
+| Feature             | **Aggregation**     | **Composition**               |
+| ------------------- | ------------------- | ----------------------------- |
+| Relationship type   | HAS-A (weak)        | HAS-A (strong)                |
+| Ownership           | ❌ No ownership      | ✅ Full ownership              |
+| Lifetime dependency | Independent         | Dependent                     |
+| Object destruction  | Child survives      | Child destroyed               |
+| UML symbol          | ◇ Hollow diamond    | ◆ Filled diamond              |
+| Implementation      | Pointer / reference | Member object / owned pointer |
+| Reusability         | High                | Low                           |
+| Example             | Car – Driver        | House – Room                  |
+
+
+-     Engine engine;   // composition
+
+-     Engine* engine;   // aggregation

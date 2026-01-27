@@ -3,7 +3,7 @@
     - the ides is to simulate real-world banking and wallet systems.
 - **Turborepo for monorepo architecture**
     - Turborepo is a build system optimized for JavaScript and TypeScript, written in Rust.
-        - **DRY principle** enforced at repo level
+        - **DRY principle** enforced at repo level.
         - **Faster Builds** with **Smart Caching**.
         - Atomic Changes (Very Important)
             - You can change multiple services in one commit.

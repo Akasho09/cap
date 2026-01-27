@@ -198,3 +198,4 @@ Hit Ratio = Number of cache hits / Total memory accesses
 
 ## Spin locking
 - Spin locking is a locking mechanism in which a thread keeps busy-waiting until it acquires the lock.
+
