@@ -34,3 +34,7 @@ cout << pow(5, 3);
 ### ❓ Why isn’t nullptr the default value of pointers?
 - Because C++ does not automatically initialize local variables (including pointers) for performance and control reasons.
 
+## parameters vs arguments
+a, b → parameters (placeholders)
+
+2, 3 → arguments (real values)
