@@ -200,3 +200,36 @@ Persistent state ensures that certain data remains available even after page rel
 4. Backend storage: Store state on a server/database via APIs for server-side persistence.
 5. State management libraries: Use Redux, Zustand, or Context API with persistence middleware.
 6. Cookies: Suitable for small pieces of data, like authentication tokens.
+
+## ✅ How Parent gets data from Child
+- 🔑 Solution: Callback Functions (Lifting State Up)
+- Parent:
+  - Owns the state
+  - Passes a function to the child
+- Child:
+  - Calls that function with data
+```js
+function Parent() {
+  const [message, setMessage] = React.useState("");
+
+  const handleChildData = (data) => {
+    setMessage(data);
+  };
+
+  return (
+    <>
+      <Child sendData={handleChildData} />
+      <p>Message from child: {message}</p>
+    </>
+  );
+}
+```
+```js
+function Child({ sendData }) {
+  return (
+    <button onClick={() => sendData("Hello from Child!")}>
+      Send Data to Parent
+    </button>
+  );
+}
+```

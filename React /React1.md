@@ -16,6 +16,7 @@
   - Compares changes (diffing)
   - Updates only what changed (reconciliation)
 > ✔ Faster than direct DOM manipulation
+
 ### 🔹 What is Vite?
 - Vite is a frontend tooling system that:
   - Starts a development server
@@ -62,7 +63,7 @@ Babel is a JavaScript compiler (transpiler) that converts modern JavaScript (ES6
 ## Props :
 -Props (short for Properties) are read-only inputs passed from a parent component to a child component.
 ### ✅ Key Characteristics
-- Passed from parent to child
+- Passed from parent to child.
 - Immutable (cannot be changed by the child)
 - Used to configure or customize components
 - Similar to function arguments
@@ -156,6 +157,7 @@ const [isOpen, setIsOpen] = useState(false);
 
 4. 4️⃣ Redux / Zustand
 - Used for large-scale apps with complex global state.
+
 #### Redux : 
   - Redux is a centralized place to store and manage application data so that every component can access it easily and consistently.
 ##### why?
@@ -329,6 +331,10 @@ It makes the DOM updates faster in React. It updates the virtual DOM first and t
 
 - Render: React creates a Virtual DOM representation of the UI.
 - Diffing: React compares (diffs) the new Virtual DOM with the previous one.
+  - After diffing:
+    - React batches updates
+    - Applies minimal changes to the real DOM
+      - This is why React is fast.
 - Reconciliation: React updates only the changed parts in the real DOM instead of re-rendering the whole page.
   
   
@@ -458,8 +464,6 @@ useEffect(<function>, <dependency>)
 # React Custom Hooks
 - uses internally another hook eg useState etc
 - Custom Hooks start with "use". Example: useFetch.
-
-
 
 ## RESTFUL APIs
 ![alt text](image-1.png)

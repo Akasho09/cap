@@ -61,6 +61,17 @@ class Welcome extends Component {
   - Harder to maintain
   - Mostly seen in older codebases.
 
+| Aspect         | Functional Components | Class Components         |
+| -------------- | --------------------- | ------------------------ |
+| Syntax         | Simple functions      | ES6 classes              |
+| State          | `useState` hook       | `this.state`             |
+| Lifecycle      | `useEffect`           | `componentDidMount`, etc |
+| `this` keyword | ❌ Not used            | ✅ Required               |
+| Code size      | Less boilerplate      | More boilerplate         |
+| Performance    | Slightly better       | Slightly heavier         |
+| Reusability    | Hooks                 | HOCs / render props      |
+| Current trend  | ✅ Preferred           | Legacy (still supported) |
+
 3. Controlled Components
 - Form data is controlled by React state
 ```jsx
@@ -79,7 +90,7 @@ function Form() {
 4. Uncontrolled Components
 Form data is handled by the DOM using ref
 ```jsx
-function Form() {
+function Form() { 
   const inputRef = React.useRef();
 
   return <input ref={inputRef} />;

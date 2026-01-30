@@ -235,6 +235,23 @@ const memoizedFunction = useCallback(() => {
 ```
 - React returns the same function reference
 - Only recreates the function if dependencies change
+- EXAMPLE :
+```js
+function Parent() {
+  const [count, setCount] = useState(0);
+
+  const handleClick = useCallback(() => {
+    console.log("clicked");
+  }, []);
+
+  return <Child onClick={handleClick} />;
+}
+
+const Child = React.memo(({ onClick }) => {
+  console.log("Child rendered");
+  return <button onClick={onClick}>Click</button>;
+});
+```
 
 > Automatically memoize values, functions, and components — so you don’t have to manually use useMemo or useCallback.
 ---

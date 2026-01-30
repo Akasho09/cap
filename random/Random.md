@@ -38,3 +38,12 @@ cout << pow(5, 3);
 a, b → parameters (placeholders)
 
 2, 3 → arguments (real values)
+
+## 
+| Aspect         | Library          | Framework               |
+| -------------- | ---------------- | ----------------------- |
+| Control        | You control flow | Framework controls flow |
+| Flexibility    | High             | Less                    |
+| Structure      | Optional         | Mandatory               |
+| Learning curve | Low              | Higher                  |
+| Opinionated    | No               | Yes                     |
