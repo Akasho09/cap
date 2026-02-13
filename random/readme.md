@@ -115,6 +115,16 @@ HMACSHA256(
 - ✔ Verifies integrity
 - ✔ Prevents data modification
 
+## 
+
+| Feature      | Session          | Token (JWT) |
+| ------------ | ---------------- | ----------- |
+| Stored where | Server           | Client      |
+| Scalable     | ❌ (needs Redis)  | ✔           |
+| Revocable    | ✔ easy           | ❌ hard      |
+| Used in      | Traditional apps | Modern APIs |
+
+
 ## API
 - An API is a set of rules that allows one software to talk to another software.
 
