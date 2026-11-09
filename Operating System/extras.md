@@ -103,7 +103,6 @@ Virtualization is a technology that allows one physical machine to run multiple 
 ## TO COVER 
  spin locking  , live locking , busy waiting , best process scheduling algo , 
 
-
 ## Cache hit 
 - occurs when the data requested by the CPU is found in the cache memory, so it can be accessed quickly without going to main memory (RAM).
 - In simple terms:
